@@ -1,21 +1,55 @@
+<!-- 
+  Name: Chizzy Nwankwo
+  Course: Web Development II
+  Teacher: Mr. Hardman
+  School: Pembina Trails Collegiate
+  Date Last Modified: June 2 2026
+-->
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Volleyball</title>
+    <link rel="stylesheet" href="images/stylesheets.css" />
+
+    <style>
+      section {
+        margin-top: 30px;
+      }
+
+      #what-is-volleyball-container {
+        display: flex;
+        flex-direction: row;
+        /* background-color: #ffa552; */
+        padding: 30px;
+        justify-content: center;
+      }
+
+      #what-is-volleyball-container h3 {
+        text-align: center;
+        padding: 20px 0;
+        display: inline;
+        transform: translateY(50%);
+      }
+
+      #what-is-volleyball-container p {
+        font-size: 24px;
+        max-width: 700px;
+        padding: 16px;
+      }
+
+      #what-is-volleyball-container img {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    </style>
   </head>
   <body>
     <header>
       <nav>
-        <li>
-          <!--
-            Introduction to the sport
-            How the scores work
-            Key players (libero, spiker, setter)
-            Navigation
-          -->
-          <a href="#home"> Home</a>
+        <ul>
+          <li><a href="#home">Home</a></li>
           <!-- 
             Basic rules
             Court diagram
@@ -23,27 +57,133 @@
             Player positions
             Common violations (net touch, double hit, etc.)
           -->
-          <a href="#rules"> Rules</a>
+          <li><a href="#rules">Rules</a></li>
           <!--
             Basic skills (serving, passing, setting, attacking)
             Advanced techniques (blocking, digging, rolling)
           -->
-          <a href="#skills-techniques"> Skills & Techniques</a>
-
+          <li><a href="#skills-techniques">Skills & Techniques</a></li>
           <!-- 
-          
-          Famous Players & Tournaments
-
-Purpose: Showcase the competitive side of the sport.
-
-Include:
-
-Notable players such as Karch Kiraly and Wilfredo León
-Major tournaments like the Olympic Games Volleyball Tournament and FIVB Volleyball Men's World Championship
-Records and achievements
-Recent champions-->
-        </li>
+            Famous Players & Tournaments
+            Purpose: Showcase the competitive side of the sport.
+            Include:
+            Notable players such as Karch Kiraly and Wilfredo León
+            Major tournaments like the Olympic Games Volleyball Tournament and FIVB Volleyball Men's World Championship
+            Records and achievements
+            Recent champions
+          -->
+          <li><a href="#famous-players">Famous Players & Tournaments</a></li>
+        </ul>
       </nav>
+      <h1>Volleyball</h1>
+      <h2>An Introduction to The Sport.</h2>
     </header>
+
+    <section id="what-is-volleyball-container">
+      <h3>What is Volleyball?</h3>
+      <div>
+        <p>
+          A team sport where two teams divided by a net compete to try to score
+          points by hitting a ball over the net to make it land on the other
+          team's side of the court. Each team typically has 6 players on the
+          court at once. There are different versions available for specific
+          circumstances in order to offer the versatility of the game to
+          everyone.
+        </p>
+        <img
+          width="500"
+          height="350"
+          src="images/woman-bumping-ball.jpg"
+          alt="" />
+      </div>
+    </section>
+
+    <section>
+      <h3>The Core Rules</h3>
+
+      <div>
+        <div>
+          <p>The Three-Hit Limit</p>
+          <p>
+            When the ball comes to your side, you can only hit the ball 3 times
+            to get it over the net. You <b>cannot</b> hit the ball 2 times in a
+            row.
+          </p>
+        </div>
+        <div>
+          <p>Boundaries</p>
+          <ul>
+            <li>The server must serve from behind the end line.</li>
+            <li>You can't touch the volleyball net.</li>
+            <li>The ball must land within the opponent's court boundaries.</li>
+          </ul>
+        </div>
+
+        <div>
+          <p>Scoring</p>
+          <ul>
+            <li>
+              A point is scored when the ball lands on the opponent's court or
+              it goes out of bounds.
+            </li>
+            <li>
+              Matches are typically played to 25 points, and a team must win by
+              2 points.
+            </li>
+            <li>
+              In volleyball, the team winning a rally scores a point. When the
+              receiving team wins a rally, it gains a point and the right to
+              serve, and its players rotate one position clockwise.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Key Positions</h3>
+
+      <!-- 
+        Key positions in volleyball and their roles.
+        This will be a grid
+      -->
+      <div>
+        <div>
+          <div>
+            <img src="" alt="" />
+            <h4>Setter</h4>
+            <p>
+              The "control tower" who touches the ball more than anyone else and
+              sets up attacks. They usually get the second touch.
+            </p>
+          </div>
+          <img src="" alt="" />
+          <h4>Libero</h4>
+          <p>
+            The great receiver specialist who typically gets the ball first and
+            plays a key role in saving.
+          </p>
+        </div>
+        <div>
+          <img src="" alt="" />
+          <h4>Spiker</h4>
+          <p>
+            The primary attacker who aims to score points by slamming the ball
+            over the net. They typically attack last from the front row.
+          </p>
+        </div>
+        <div>
+          <img src="" alt="" />
+          <h4>Middle Blocker</h4>
+          <p>
+            The player who specializes in blocking the opponent's attacks at the
+            net. This person is usually tall and has good timing to jump and
+            intercept the ball.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>Copyright&copy; Chizzy Nwankwo 2026</footer>
   </body>
 </html>

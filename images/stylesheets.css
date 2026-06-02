@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* 
+    This makes it so that the website will make the border the
+    visible content outline to keep
+    sizing consistent 
+  */
+  box-sizing: border-box;
+  line-height: 140%;
+}
+
+html {
+  /* This makes sizing easier and consistent. */
+  font-size: 62.5%;
+}
+
+body {
+  background-color: ghostwhite;
+  font-size: 1.6rem;
+}
+
+header {
+  background-color: #272727;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+    url(../images/volleyball-men-playing.avif);
+  background-size: cover;
+  background-position: center 40%;
+  padding-bottom: 150px;
+}
+h1 {
+  font-size: 64px;
+  color: ghostwhite;
+  text-align: center;
+  margin-top: 50px;
+}
+
+h2 {
+  color: ghostwhite;
+  text-align: center;
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 32px;
+  display: inline;
+}
+
+nav {
+  background-color: #1e1d1d;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+li {
+  padding: 12px 16px;
+}
+
+a {
+  color: ghostwhite;
+}
