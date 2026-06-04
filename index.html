@@ -18,7 +18,6 @@
         display: flex;
         flex-direction: row;
         margin-top: 30px;
-        /* background-color: #ffa552; */
         justify-content: center;
         flex-wrap: wrap;
       }
@@ -53,7 +52,6 @@
         align-items: center;
         margin-left: auto;
         margin-right: auto;
-        width: 90%;
       }
 
       #core-rules div {
@@ -62,19 +60,10 @@
         align-items: center;
         width: 350px;
         height: 500px;
-        /* background-color: rgb(58, 58, 58); */
         background-color: #ffa200;
         margin: 16px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
         border-radius: 15px;
-      }
-
-      #core-rules img {
-        width: 150px;
-      }
-
-      #core-rules h4 {
-        color: #171717;
-        font-size: 25px;
       }
 
       #core-rules p,
@@ -82,6 +71,68 @@
         width: 80%;
         font-size: 20px;
         color: #171717;
+        padding: 16px;
+        justify-self: flex-end;
+      }
+
+      #volleyball-positions-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 16px;
+        width: 90%;
+        justify-content: center;
+        margin: 0 auto;
+      }
+
+      .volleyball-position {
+        background-color: #555555;
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        width: auto;
+        height: 100%;
+      }
+
+      .volleyball-position img {
+        width: 150px;
+        height: 150px;
+        margin: 16px;
+        position: relative;
+        bottom: 20%;
+        object-fit: cover;
+        float: right;
+      }
+      .volleyball-position p {
+        display: inline-block;
+        max-width: 330px;
+        color: ghostwhite;
+      }
+
+      .volleyball-position h4 {
+        font-size: 30px;
+        margin: 20px;
+        color: ghostwhite;
+        text-decoration: underline #ffa200;
+      }
+
+      @media (max-width: 1169px) {
+        #core-rules {
+          flex-direction: column;
+        }
+        #core-rules div {
+          width: 100%;
+          height: auto;
+          justify-content: center;
+        }
+        #core-rules p {
+          text-align: center;
+        }
+        #boundaries-list-rule {
+          width: 50%;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+        }
       }
     </style>
   </head>
@@ -96,14 +147,14 @@
             Player positions
             Common violations (net touch, double hit, etc.)
           -->
-          <li><a href="#home">Home</a></li>
+          <li><a href="index.html">Home</a></li>
 
-          <li><a href="#beach-volleyball">Rules</a></li>
           <!--
             Basic skills (serving, passing, setting, attacking)
             Advanced techniques (blocking, digging, rolling)
           -->
-          <li><a href="#skills-techniques">Skills & Techniques</a></li>
+          <li><a href="skills-techniques.html">Skills & Techniques</a></li>
+          <li><a href="beach-volleyball">Rules</a></li>
           <!-- 
             Famous Players & Tournaments
             Purpose: Showcase the competitive side of the sport.
@@ -113,7 +164,7 @@
             Records and achievements
             Recent champions
           -->
-          <li><a href="#famous-players">Famous Players & Tournaments</a></li>
+          <li><a href="famous-players">Famous Players & Tournaments</a></li>
         </ul>
       </nav>
       <h1>Volleyball</h1>
@@ -155,7 +206,9 @@
         <div>
           <h4>The Three-Hit Limit</h4>
           <img
-            src="images/volleyball-player-serving-ball-black-white-vector-outline_231873-6393.jpg" />
+            src="images/volleyball-player-serving-ball-black-white-vector-outline_231873-6393.jpg"
+            width="150px"
+            height="150px" />
           <p>
             When the ball comes to your side, you can only hit the ball 3 times
             to get it over the net. You <b>cannot</b> hit the ball 2 times in a
@@ -164,7 +217,12 @@
         </div>
         <div>
           <h4>Boundaries</h4>
-          <ul>
+          <img
+            src="images/volleyball-court.png"
+            width="200px"
+            height="100px"
+            alt="Birds eye view of a volleyball court." />
+          <ul id="boundaries-list-rule">
             <li>The server must serve from behind the end line.</li>
             <li>You can't touch the volleyball net.</li>
             <li>The ball must land within the opponent's court boundaries.</li>
@@ -193,49 +251,77 @@
     </section>
 
     <section>
-      <h3>Key Positions</h3>
+      <h3 style="padding: 16px">Key Positions</h3>
 
       <!-- 
         Key positions in volleyball and their roles.
         This will be a grid
       -->
-      <div>
-        <div>
-          <div>
-            <img src="" alt="" />
-            <h4>Setter</h4>
-            <p>
-              The "control tower" who touches the ball more than anyone else and
-              sets up attacks. They usually get the second touch.
-            </p>
-          </div>
-          <img src="" alt="" />
+      <div id="volleyball-positions-container">
+        <div class="volleyball-position">
+          <h4>Setter</h4>
+          <p>
+            The "control tower" who touches the ball more than anyone else and
+            sets up attacks. They usually get the second touch.
+          </p>
+          <img
+            style="object-position: center 0px"
+            src="images/volleyball-setter-silhouette-000000-xl.png"
+            alt="" />
+        </div>
+        <div class="volleyball-position">
           <h4>Libero</h4>
           <p>
             The great receiver specialist who typically gets the ball first and
             plays a key role in saving.
           </p>
+          <img src="images/libero-haikyuu.webp" alt="" />
         </div>
-        <div>
-          <img src="" alt="" />
+        <div class="volleyball-position">
           <h4>Spiker</h4>
           <p>
             The primary attacker who aims to score points by slamming the ball
             over the net. They typically attack last from the front row.
           </p>
+          <img src="images/Spiker.webp" alt="" />
         </div>
-        <div>
-          <img src="" alt="" />
+        <div class="volleyball-position">
           <h4>Middle Blocker</h4>
           <p>
             The player who specializes in blocking the opponent's attacks at the
             net. This person is usually tall and has good timing to jump and
             intercept the ball.
           </p>
+          <img src="images/volleyball-middle-blocker.jpg" alt="" />
         </div>
       </div>
     </section>
 
-    <footer>Copyright&copy; Chizzy Nwankwo 2026</footer>
+    <footer>
+      <h4>Volleyball</h4>
+      <ul>
+        <li>
+          <a href="https://www.instagram.com/volleyball/">
+            <img
+              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f14845cf1c931e2_DIMENSIONS_Social_Instagram.svg"
+          /></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/volleyball/">
+            <img
+              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434d86ae4be2b1b05e79_DIMENSIONS_Social_Facebook.svg"
+              alt=""
+          /></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/volleyball">
+            <img
+              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f1484082cc931e4_DIMENSIONS_Social_Twitter.svg"
+              alt=""
+          /></a>
+        </li>
+      </ul>
+      Copyright&copy; Chizzy Nwankwo 2026
+    </footer>
   </body>
 </html>
