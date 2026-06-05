@@ -13,6 +13,8 @@
 html {
   /* This makes sizing easier and consistent. */
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 body {

@@ -134,6 +134,39 @@
           text-align: center;
         }
       }
+      @media (max-width: 1148px) {
+        .volleyball-position img {
+          float: none;
+          display: block;
+          margin: 16px auto;
+          bottom: 0px;
+          transform: none;
+        }
+        .volleyball-position p {
+          text-align: center;
+        }
+      }
+
+      #fundamental-skills {
+        display: flex;
+        flex-direction: column;
+        margin-right: auto;
+        margin-left: auto;
+        align-content: center;
+        width: 90%;
+      }
+      #fundamental-skills h4,
+      #fundamental-skills p {
+        color: ghostwhite;
+      }
+
+      #fundamental-skills div {
+        max-width: 900px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 16px;
+        border-bottom: 4px solid #ffa200;
+      }
     </style>
   </head>
   <body>
@@ -170,132 +203,205 @@
       <h1>Volleyball</h1>
       <h2>An Introduction to The Sport.</h2>
     </header>
-
-    <section>
-      <h3 style="margin-top: 50px">What is Volleyball?</h3>
-      <div id="what-is-volleyball-container">
-        <div>
-          <p>
-            A team sport where two teams divided by a net compete to try to
-            score points by hitting a ball over the net to make it land on the
-            other team's side of the court. Each team typically has 6 players on
-            the court at once. There are different versions available for
-            specific circumstances in order to offer the versatility of the game
-            to everyone.
-          </p>
-          <p>
-            A team can touch a volleyball a maximum of three times before it
-            must go over the net. The usual sequence is the dig where a person
-            bumps the ball to pass it, a set, the setter passes to someone able
-            to spike and then the spike where a person slams the ball over the
-            net onto the opponents side of the court.
-          </p>
-        </div>
-        <img
-          width="500"
-          height="350"
-          src="images/woman-bumping-ball.jpg"
-          alt="" />
-      </div>
-    </section>
-
-    <section>
-      <h3>The Core Rules</h3>
-
-      <div id="core-rules">
-        <div>
-          <h4>The Three-Hit Limit</h4>
+    <main>
+      <section>
+        <div id="what-is-volleyball-container">
+          <div>
+            <div style="display: flex; flex-direction: column">
+              <h3 style="text-align: left">What is Volleyball?</h3>
+              <p>
+                A team sport where two teams divided by a net compete to try to
+                score points by hitting a ball over the net to make it land on
+                the other team's side of the court. Each team typically has 6
+                players on the court at once. There are different versions
+                available for specific circumstances in order to offer the
+                versatility of the game to everyone.
+              </p>
+              <p>
+                A team can touch a volleyball a maximum of three times before it
+                must go over the net. The usual sequence is the dig where a
+                person bumps the ball to pass it, a set, the setter passes to
+                someone able to spike and then the spike where a person slams
+                the ball over the net onto the opponents side of the court.
+              </p>
+            </div>
+          </div>
           <img
-            src="images/volleyball-player-serving-ball-black-white-vector-outline_231873-6393.jpg"
-            width="150px"
-            height="150px" />
-          <p>
-            When the ball comes to your side, you can only hit the ball 3 times
-            to get it over the net. You <b>cannot</b> hit the ball 2 times in a
-            row.
-          </p>
-        </div>
-        <div>
-          <h4>Boundaries</h4>
-          <img
-            src="images/volleyball-court.png"
-            width="200px"
-            height="100px"
-            alt="Birds eye view of a volleyball court." />
-          <ul id="boundaries-list-rule">
-            <li>The server must serve from behind the end line.</li>
-            <li>You can't touch the volleyball net.</li>
-            <li>The ball must land within the opponent's court boundaries.</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Scoring</h4>
-          <ul>
-            <li>
-              A point is scored when the ball lands on the opponent's court or
-              it goes out of bounds.
-            </li>
-            <li>
-              Matches are typically played to 25 points, and a team must win by
-              2 points.
-            </li>
-            <li>
-              In volleyball, the team winning a rally scores a point. When the
-              receiving team wins a rally, it gains a point and the right to
-              serve, and its players rotate one position clockwise.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h3 style="padding: 16px">Key Positions</h3>
-
-      <!-- 
-        Key positions in volleyball and their roles.
-        This will be a grid
-      -->
-      <div id="volleyball-positions-container">
-        <div class="volleyball-position">
-          <h4>Setter</h4>
-          <p>
-            The "control tower" who touches the ball more than anyone else and
-            sets up attacks. They usually get the second touch.
-          </p>
-          <img
-            style="object-position: center 0px"
-            src="images/volleyball-setter-silhouette-000000-xl.png"
+            width="500"
+            height="350"
+            src="images/woman-bumping-ball.jpg"
             alt="" />
         </div>
-        <div class="volleyball-position">
-          <h4>Libero</h4>
-          <p>
-            The great receiver specialist who typically gets the ball first and
-            plays a key role in saving.
-          </p>
-          <img src="images/libero-haikyuu.webp" alt="" />
+      </section>
+
+      <section style="background-color: #474747; padding: 48px">
+        <h3 style="color: #f8f8ff">Fundamental Skills and Techniques</h3>
+        <div id="fundamental-skills">
+          <div>
+            <h4>Serving</h4>
+            <p>
+              Serving is the act of putting the ball into play. There are
+              various types of serves, including underhand, overhand, and jump
+              serves.<br />
+              To serve the ball, you go behind the out of bounds line and hit
+              the ball with your hand to send it over the net.
+            </p>
+          </div>
+          <div>
+            <h4>Bumping</h4>
+            <p>
+              Bumping (also known as forearm pass) is used to pass the ball to a
+              teammate. Its typically the first touch. It involves using the
+              forearms to create a platform for the ball to bounce off of. There
+              are many ways to bump a ball but its important that you use both
+              arms most of the time to maintain accuracy and strength.
+            </p>
+          </div>
+          <div>
+            <h4>Setting</h4>
+            <p>
+              Setting is the act of preparing the ball for an attack. The setter
+              touches the ball after the bump and before the spike, aiming to
+              deliver a precise ball to the spiker. <br />
+              To set a ball, position yourself under the volleyball, create a
+              triangle with your hands and use your legs to push upwards.
+            </p>
+          </div>
+          <div>
+            <h4>Blocking</h4>
+            <p>
+              Blocking is a defensive skill that people in the front row use to
+              prevent the ball from going over the net.<br />
+              To block effectively, you must time your jump to meet the ball at
+              its highest point and use your hands to create a solid barrier.
+            </p>
+          </div>
+          <div>
+            <h4>Spiking</h4>
+            <p>
+              Spiking is the act of attacking the ball with force, aiming to
+              score points by slamming the ball down into the opponent's court.
+              A successful spike requires timing, power, and precision.<br />
+              To spike a ball, approach the net with speed, jump off both feet,
+              and swing your arm to hit the ball at its highest point.
+            </p>
+          </div>
         </div>
-        <div class="volleyball-position">
-          <h4>Spiker</h4>
-          <p>
-            The primary attacker who aims to score points by slamming the ball
-            over the net. They typically attack last from the front row.
-          </p>
-          <img src="images/Spiker.webp" alt="" />
+        <!-- 
+          This div is going to hold the GIFs for each fundamental skill
+        -->
+        <div id="skills-gallery">
+          <img
+            src="images/volleyball spike GIF by Black Hills State University.gif" />
+          <img
+            src="images/College Sports Sport GIF by NCAA Championships.gif"
+            alt="" />
+          <img src="images/Volleyball Sneaker GIF by Avoli.gif" />
+          <img src="images/how-to-serve-volleyball.gif" alt="" />
+          <img src="images/Volleyball Setting GIF by GoDuquesne.gif" alt="" />
         </div>
-        <div class="volleyball-position">
-          <h4>Middle Blocker</h4>
-          <p>
-            The player who specializes in blocking the opponent's attacks at the
-            net. This person is usually tall and has good timing to jump and
-            intercept the ball.
-          </p>
-          <img src="images/volleyball-middle-blocker.jpg" alt="" />
+      </section>
+
+      <section>
+        <h3>The Core Rules</h3>
+
+        <div id="core-rules">
+          <div>
+            <h4>The Three-Hit Limit</h4>
+            <img
+              src="images/volleyball-player-serving-ball-black-white-vector-outline_231873-6393.jpg"
+              width="150px"
+              height="150px" />
+            <p>
+              When the ball comes to your side, you can only hit the ball 3
+              times to get it over the net. You <b>cannot</b> hit the ball 2
+              times in a row.
+            </p>
+          </div>
+          <div>
+            <h4>Boundaries</h4>
+            <img
+              src="images/volleyball-court.png"
+              width="200px"
+              height="100px"
+              alt="Birds eye view of a volleyball court." />
+            <ul id="boundaries-list-rule">
+              <li>The server must serve from behind the end line.</li>
+              <li>You can't touch the volleyball net.</li>
+              <li>
+                The ball must land within the opponent's court boundaries.
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Scoring</h4>
+            <ul>
+              <li>
+                A point is scored when the ball lands on the opponent's court or
+                it goes out of bounds.
+              </li>
+              <li>
+                Matches are typically played to 25 points, and a team must win
+                by 2 points.
+              </li>
+              <li>
+                In volleyball, the team winning a rally scores a point. When the
+                receiving team wins a rally, it gains a point and the right to
+                serve, and its players rotate one position clockwise.
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section>
+        <h3 style="padding: 16px">Key Positions</h3>
+
+        <!-- 
+      Key positions in volleyball and their roles.
+      This will be a grid
+    -->
+        <div id="volleyball-positions-container">
+          <div class="volleyball-position">
+            <h4>Setter</h4>
+            <p>
+              The "control tower" who touches the ball more than anyone else and
+              sets up attacks. They usually get the second touch.
+            </p>
+            <img
+              style="object-position: center 0px"
+              src="images/volleyball-setter-silhouette-000000-xl.png"
+              alt="" />
+          </div>
+          <div class="volleyball-position">
+            <h4>Libero</h4>
+            <p>
+              The great receiver specialist who typically gets the ball first
+              and plays a key role in saving.
+            </p>
+            <img src="images/libero-haikyuu.webp" alt="" />
+          </div>
+          <div class="volleyball-position">
+            <h4>Spiker</h4>
+            <p>
+              The primary attacker who aims to score points by slamming the ball
+              over the net. They typically attack last from the front row.
+            </p>
+            <img src="images/Spiker.webp" alt="" />
+          </div>
+          <div class="volleyball-position">
+            <h4>Middle Blocker</h4>
+            <p>
+              The player who specializes in blocking the opponent's attacks at
+              the net. This person is usually tall and has good timing to jump
+              and intercept the ball.
+            </p>
+            <img src="images/volleyball-middle-blocker.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer>
       <h4>Volleyball</h4>
