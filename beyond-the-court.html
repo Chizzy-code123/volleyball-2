@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beyond the Court</title>
+    <link rel="stylesheet" href="stylesheets/website-styles.css" />
+    <script src="back-to-top.js" defer></script>
+    <style>
+      body {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+      }
+      #history-of-volleyball-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+      }
+
+      #history-of-volleyball-container p {
+        margin: 16px;
+        max-width: 700px;
+      }
+
+      #history-of-volleyball-container img {
+        border-radius: 20px;
+        margin: 16px;
+        max-width: 100%;
+        height: auto;
+        flex-shrink: 1 500px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      #famous-volleyball-players-and-tournaments {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      #famous-volleyball-players-and-tournaments h4 {
+        margin-left: 20px;
+        text-decoration: underline #ff7a00;
+      }
+
+      #famous-volleyball-players-and-tournaments div {
+        margin: 16px;
+        margin-right: 40px;
+        margin-left: 40px;
+      }
+
+      #famous-volleyball-players-and-tournaments p {
+        max-width: 700px;
+        width: 100%;
+        text-wrap: wrap;
+        margin-left: 20px;
+      }
+
+      #famous-volleyball-players-and-tournaments a {
+        margin-left: 20px;
+      }
+
+      #famous-volleyball-players-and-tournaments img {
+        border-radius: 8px;
+        float: right;
+        width: 300px;
+        height: 300px;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        margin-left: 16px;
+        margin-right: 16px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      #legendary-players-statement {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 20px;
+        word-spacing: 1.6px;
+        color: #262626;
+        background-color: #ff8b3db2;
+        padding: 16px;
+        font-weight: 400;
+        border-radius: 8px;
+        margin: 16px;
+      }
+
+      @media (max-width: 612px) {
+        #famous-volleyball-players-and-tournaments img {
+          float: none;
+          display: block;
+          margin: 0 auto;
+        }
+        #famous-volleyball-players-and-tournaments h4 {
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        #famous-volleyball-players-and-tournaments p {
+          text-align: center;
+          display: block;
+          margin: 20px auto;
+        }
+      }
+
+      #beach-volleyball-container {
+        background-image:
+          linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url(images/female-athlete-passing-the-ball-to-a-man.webp);
+        background-size: cover;
+        background-position: center;
+        padding: 60px;
+        margin-top: 40px;
+        border-radius: 8px;
+      }
+
+      #beach-volleyball-container h3 {
+        color: ghostwhite;
+      }
+
+      #beach-volleyball-container p {
+        color: ghostwhite;
+      }
+
+      .haikyuu-section {
+        background-color: #1b1b1b;
+        padding: 80px 20px;
+        margin-top: 100px;
+
+        background-size: contain;
+        /* 
+          vw is Viewport Width. It measures the total width of the screen
+          instead of the body width.
+        */
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 600px;
+      }
+
+      .haikyuu-container {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+      }
+
+      .haikyuu-section img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        position: absolute;
+        bottom: 0%;
+        left: 0;
+        z-index: -2;
+      }
+
+      .haikyuu-section::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        background: linear-gradient(
+          to right,
+          #1b1b1b 0%,
+          rgba(27, 27, 27, 0) 35%,
+          rgba(27, 27, 27, 0) 35%,
+          #1b1b1b 100%
+        );
+      }
+
+      /* Header */
+      .haikyuu-header {
+        text-align: center;
+        border-bottom: 3px solid #ff7a00;
+        padding-bottom: 24px;
+      }
+
+      .haikyuu-header h3 {
+        font-size: 3rem;
+        color: ghostwhite;
+        margin: 0 0 8px 0;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+
+      .haikyuu-subtitle {
+        color: #aaa;
+        font-size: 1rem;
+        margin: 0;
+        font-style: italic;
+      }
+
+      .haikyuu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+      }
+
+      .haikyuu-card {
+        background-color: #242424;
+        border-left: 4px solid #ff7a00;
+        padding: 28px;
+        border-radius: 4px;
+      }
+
+      .haikyuu-card h3 {
+        color: ghostwhite;
+        font-size: 1.1rem;
+        margin: 0 0 12px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .haikyuu-card p {
+        color: #ccc;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      .haikyuu-quote {
+        text-align: center;
+        padding: 40px 32px;
+        background-color: #242424;
+        border-radius: 8px;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .haikyuu-quote blockquote {
+        color: #fff;
+        font-size: 1.25rem;
+        font-style: italic;
+        line-height: 1.8;
+        margin: 0 0 16px 0;
+      }
+
+      .haikyuu-quote cite {
+        color: #ff7a00;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+
+      #haikyuu-section-divider {
+        position: absolute;
+        flex-direction: row;
+        left: 0%;
+        width: 40%;
+        width: 100vw;
+        height: 20%;
+      }
+
+      #hinata-flying-img {
+        justify-self: flex-end;
+        position: relative;
+        left: 25%;
+        transform: translateY(60%);
+        transform: scale(1.5);
+        animation:
+          reveal linear forwards,
+          fly 2s linear ease-out infinite;
+        animation-timeline: view();
+        animation-range: entry 0% cover 50%;
+      }
+
+      @keyframes reveal {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fly {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(100px);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 
+      Famous Players & Tournaments
+      Purpose: Showcase the competitive side of the sport.
+      Include:
+      Notable players such as Karch Kiraly and Wilfredo León
+      Major tournaments like the Olympic Games Volleyball Tournament and FIVB Volleyball Men's World Championship
+      Records and achievements
+      Recent champions
+    -->
+  </body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index-2.html">Home</a></li>
+        <li><a href="beyond-the-court.html">Beyond The Court</a></li>
+      </ul>
+    </nav>
+    <h1>Volleyball</h1>
+    <h2>Going Beyond the Court</h2>
+  </header>
+
+  <main>
+    <a id="back-to-top" href="#"><img src="images/arrow-up.png" /></a>
+    <section>
+      <div id="history-of-volleyball-container">
+        <h3>History of Volleyball</h3>
+        <p>
+          Volleyball was invented in 1895 by William G. Morgan, a physical
+          director at the <b>Young Men's Christian Association (YMCA)</b> in
+          Massachusetts. He wanted to create a new game that combined elements
+          of basketball, baseball, tennis, and handball. The original name for
+          the game was "Mintonette," but it was later changed to "Volleyball"
+          after a demonstration game where a player remarked that the ball was
+          volleying back and forth over the net.
+        </p>
+        <p>
+          The rules to play the game kept changing over the years like the
+          number of players and the amount of points to win a set but it was
+          finally standardized in 1947.
+        </p>
+        <p>
+          in 1947, representatives from 14 nations Belgium, Brazil,
+          Czechoslovakia, Egypt, France, the Netherlands, Hungary, Italy,
+          Poland, Portugal, Romania, Uruguay, the USA and Yugoslavia met in
+          Paris to form the Federation Internationale de Volleyball (FIVB).
+          "FIVB has become one of the largets sporting organizations in the
+          world with 222 afiliated bodies"
+          <a
+            class="reference-link"
+            href="https://www.olympics.com/en/news/what-history-volleyball-game-origin-mintonette-ymca-fivb-olympics"
+            target="_blank"
+            >Olympics</a
+          >
+        </p>
+        <p>
+          With an international governing body in place, volleyball's popularity
+          grew rapidly. In 1957, indoor volleyball was granted Olympic status by
+          the
+          <a
+            class="reference-link"
+            href="https://www.olympics.com/ioc"
+            target="_blank"
+            >International Olympic Committee (IOC)</a
+          >
+        </p>
+        <img
+          width="500px"
+          height="auto"
+          src="images/volleyball-paris-1956.webp" />
+      </div>
+    </section>
+
+    <section style="margin-top: 60px">
+      <h3>Famous Players & Tournaments</h3>
+
+      <p id="legendary-players-statement">
+        Volleyball has seen many legendary players and memorable tournaments
+        throughout its history; some that has changed the game forever.
+        <br />
+        Here are some of the most notable players and tournaments in volleyball
+        history
+      </p>
+
+      <div id="famous-volleyball-players-and-tournaments">
+        <div>
+          <h4>1. Karch Kiraly</h4>
+          <img width="200px" height="200px" src="images/karch-kiraly.webp" />
+          <p>
+            Widely regarded as one of the greatest volleyball players of all
+            time, Karch Kiarly is an American former professional volleyball
+            player and coach. He dominated indoor volleyball in the 1980s and
+            lead the US Men's National Team to back-to-back Olympic Gold medals
+            in 1984 and 1988. He later transitioned to becah volleyball and won
+            a gold medal. he is the only athlete to win Olympic gold in both
+            indoor and beach volleyball. After retiring from playing, Kiraly
+            went on to coach the US Women's Indoor team to their first Olympic
+            gold in 2021.
+          </p>
+          <br />
+          <a
+            class="reference-link"
+            href="https://usavolleyball.org/coach/karch-kiraly/"
+            target="_blank">
+            Click here to learn more about Karch Kiraly</a
+          >
+        </div>
+        <hr />
+        <div>
+          <h4>2. Wilfredo León</h4>
+          <img
+            width="200px"
+            height="200px"
+            src="images/wilfredo-leon-volleyball-player.webp" />
+          <p>
+            Wilfredo León is a former Cuban professional volleyball player that
+            plays for Poland. He started playing volleyball before reaching his
+            teens and got debuted for the Cuban national team at the age of 14.
+            His position is outside hitter. Wilfredo is famous for his powerful
+            jump serves that average <b>130km/h</b> and an impressive hitting
+            point that allows him to spike over almost any block in the world.
+          </p>
+          <br />
+          <a
+            class="reference-link"
+            href="images/wilfredo-leon-volleyball-player.webp"
+            target="_blank">
+            Click here to learn more about Wilfredo León</a
+          >
+        </div>
+        <hr />
+        <div>
+          <h4>3. Tijana Bošković</h4>
+          <img width="200px" height="200px" src="images/tijana.webp" />
+          <p>
+            Tijana Bošković is a Serbian professional volleyball player who
+            plays as a middle blocker. She is widely considered one of the best
+            female players in the world and has won numerous awards, including
+            the Best Player award at the 2016 Olympics. Bošković is known for
+            her powerful spikes and excellent blocking abilities.
+          </p>
+          <br />
+          <a
+            class="reference-link"
+            href="https://usavolleyball.org/player/tijana-boskovic/"
+            target="_blank">
+            Click here to learn more about Tijana Bošković</a
+          >
+        </div>
+        <hr />
+        <div>
+          <h4>4. The 2012 London Olympics</h4>
+          <p style="max-width: 100%">
+            This single match is widely regarded as one of the greatest
+            volleyball matches in history. It was the gold medal match between
+            Russia vs Brazil. Brazil was completely dominating the match. They
+            won the first two sets easily and were leading in the third set.
+            Russia was completely overwhelmed, and their offense was falling
+            apart against Brazil's defense. Desperate, Russia's coach made the
+            the bold desicion to sub his giant 7'2 middle blocker Dmitry
+            Muserskiy and move him out of his normal position to play as an
+            oppisite hitter. <br />
+            Middle blockers almost never play as a primary attacker so Brazil
+            had no idea on how to defend against him. Muserskiy went on to score
+            31 points and Russia flipped the match around, winning the next 3
+            sets and stole the gold medal.
+          </p>
+          <br />
+          <img
+            style="
+              float: none;
+              height: auto;
+              width: 600px;
+              object-fit: cover;
+              display: block;
+              margin: 0 auto;
+              margin-bottom: 16px;
+            "
+            src="images/russian-volleyball-players-celebrating-after-comeback.avif" />
+          <a
+            style="display: block; margin: 0 auto; text-align: center"
+            class="reference-link"
+            href="https://www.olympics.com/en/news/russia-stun-brazil-for-volleyball-gold-london-2012-volleyball"
+            target="_blank">
+            Click here to learn more about the 2012 London Olympics</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="beach-volleyball-container">
+      <div>
+        <h3 style="text-align: center">Beach Volleyball</h3>
+        <p>
+          Beach volleyball is a popular variant of indoor volleyball.Born on the
+          sunny shores of Santa Monica, California, in the 1920s, the beach game
+          strips the sport down to its absolute essentials: just two players per
+          side covering a sand court that is only slightly smaller than an
+          indoor one.<br />
+          The volleyball is differernt from the indoor one as it is slightly
+          larger and lighter to make it easier to control in the wind. The rules
+          are also slightly different, with matches being played as
+          best-of-three sets, and the first two sets played to 21 points instead
+          of 25. The final set is played to 15 points.
+        </p>
+      </div>
+    </section>
+
+    <div id="haikyuu-section-divider">
+      <img width="40%" src="images/Section Divider.png" />
+      <img
+        id="hinata-flying-img"
+        width="239px"
+        height="341px"
+        src="images/hinata-flying-cropped-bgremoved.png" />
+    </div>
+    <section class="haikyuu-section">
+      <img src="images/hinata-and-kageyama-Cropped.avif" />
+      <div class="haikyuu-container">
+        <div class="haikyuu-header">
+          <h3>Haikyuu!!: The Anime That Connects</h3>
+        </div>
+
+        <div class="haikyuu-grid">
+          <div class="haikyuu-card">
+            <h3>How It Inspires People to Play Volleyball</h3>
+            <p>
+              Shoyo, a 15-year old passionate volleyball player wants to become
+              like the Little Giant. The problem is, hes short, not very skilled
+              and isn't the smartest, but what he does have keeps him going. He
+              has his amazing jumps and his determination. He continues to grow
+              throughout the anime and proves to viewers that you need to push
+              past the walls in your way.
+            </p>
+          </div>
+
+          <div class="haikyuu-card">
+            <h3>Character Development</h3>
+            <p>
+              From Hinata's relentless determination to Kageyama's growth from a
+              lone genius to a true teammate, every character in Haikyuu!!
+              evolves through failure, rivalry, and perseverance mirroring the
+              real journey of any athlete while carrying the viewer along the
+              ride.
+            </p>
+          </div>
+        </div>
+
+        <div class="haikyuu-quote">
+          <blockquote>
+            "The last ones standing are the winners. No matter how many times
+            you get knocked down, keep getting back up."
+          </blockquote>
+          <cite>— Ittetsu Takeda, Haikyuu!!</cite>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <h4>Volleyball</h4>
+    <ul>
+      <li>
+        <a href="https://www.instagram.com/volleyballcanada/">
+          <img
+            src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f14845cf1c931e2_DIMENSIONS_Social_Instagram.svg"
+        /></a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/VolleyballCanada/">
+          <img
+            src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434d86ae4be2b1b05e79_DIMENSIONS_Social_Facebook.svg"
+            alt=""
+        /></a>
+      </li>
+      <li>
+        <a href="https://x.com/VBallCanada">
+          <img
+            src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f1484082cc931e4_DIMENSIONS_Social_Twitter.svg"
+            alt=""
+        /></a>
+      </li>
+    </ul>
+    Copyright&copy; Chizzy Nwankwo 2026
+  </footer>
+</html>

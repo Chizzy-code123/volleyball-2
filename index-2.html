@@ -1,0 +1,489 @@
+<!-- 
+  Name: Chizzy Nwankwo
+  Course: Web Development II
+  Teacher: Mr. Hardman
+  School: Pembina Trails Collegiate
+  Date Last Modified: June 7 2026
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volleyball</title>
+    <link rel="stylesheet" href="stylesheets/website-styles.css" />
+    <script src="back-to-top.js" defer></script>
+
+    <style>
+      #what-is-volleyball-container {
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      #core-rules h4 {
+        text-align: center;
+        padding: 20px 0;
+        font-size: 20px;
+      }
+
+      #what-is-volleyball-container p {
+        max-width: 700px;
+        padding: 16px;
+      }
+
+      #what-is-volleyball-container img {
+        border-radius: 8px;
+        margin: 30px;
+        width: 400px;
+        height: 500px;
+        object-fit: cover;
+        background: transparent;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.2));
+      }
+
+      #core-rules-container {
+        margin-top: 40px;
+      }
+
+      #core-rules {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(250px, 1fr));
+        grid-template-rows: repeat(auto-fill, 500px);
+        margin-top: 20px;
+        gap: 8px;
+        width: 100%;
+      }
+
+      .core-rule-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #ffa200;
+        margin: 16px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .core-rule-card img {
+        margin: 16px;
+      }
+
+      .core-rule-card p,
+      .core-rule-card ul {
+        font-size: 16px;
+        text-align: left;
+        color: #171717;
+        width: 80%;
+        display: block;
+      }
+
+      #volleyball-positions-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 16px;
+        justify-content: center;
+        margin: 0 auto;
+      }
+
+      .volleyball-position-card {
+        background-color: #555555;
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100%;
+      }
+
+      .volleyball-position-card img {
+        width: 150px;
+        height: 150px;
+        margin: 0 0 16px 16px;
+        object-fit: cover;
+        float: right;
+      }
+      .volleyball-position-card p {
+        color: ghostwhite;
+        margin: 16px;
+      }
+
+      .volleyball-position-card h4 {
+        font-size: 30px;
+        margin: 20px;
+        color: ghostwhite;
+        text-decoration: underline #ffa200;
+      }
+
+      @media (max-width: 1169px) {
+        #core-rules {
+          flex-direction: column;
+        }
+        #core-rules div {
+          width: 100%;
+          height: auto;
+          justify-content: center;
+        }
+        #core-rules p {
+          text-align: center;
+        }
+        #boundaries-list-rule {
+          width: 50%;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+        }
+      }
+      @media (max-width: 1148px) {
+        .volleyball-position img {
+          float: none;
+          display: block;
+          margin: 16px auto;
+          bottom: 0px;
+          transform: none;
+        }
+        .volleyball-position p {
+          text-align: center;
+        }
+      }
+
+      #fundamental-skills {
+        display: flex;
+        flex-direction: column;
+        margin-right: auto;
+        margin-left: auto;
+        align-content: center;
+        width: 100%;
+      }
+      #fundamental-skills h4,
+      #fundamental-skills p {
+        color: ghostwhite;
+      }
+
+      #fundamental-skills div {
+        max-width: 900px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 16px;
+        border-bottom: 4px solid #ffa200;
+      }
+
+      #beginning-quote {
+        background-color: #ffa743;
+        padding: 16px;
+        border-radius: 8px;
+        margin-top: 50px;
+      }
+      #beginning-quote blockquote {
+        font-size: 24px;
+        font-style: italic;
+      }
+      #beginning-quote cite {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      #skills-gallery-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        grid-template-rows: 150px;
+        gap: 48px;
+        margin-top: 16px;
+      }
+
+      #skills-gallery-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      #skills-gallery-container figcaption {
+        background-color: #b4b4b4;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index-2.html">Home</a></li>
+          <li><a href="beyond-the-court.html">Beyond The Court</a></li>
+        </ul>
+      </nav>
+      <h1>Volleyball</h1>
+      <h2>An Introduction to The Sport.</h2>
+    </header>
+
+    <main>
+      <a id="back-to-top" href="#"><img src="images/arrow-up.png" /></a>
+
+      <div id="beginning-quote">
+        <blockquote>
+          "You're either getting better or getting worse. I don't think you stay
+          the same in sports. If we want to achieve something special in the
+          game, then those players have to recognize that they're responsible
+          every day for getting better."
+        </blockquote>
+        <cite>-<b>Russ Rose</b></cite>
+      </div>
+
+      <section>
+        <div id="what-is-volleyball-container">
+          <div>
+            <div style="display: flex; flex-direction: column">
+              <h3 style="text-align: left">What is Volleyball?</h3>
+              <p>
+                Volleyball is a team sport where two teams divided by a net
+                compete to try to score points by hitting a ball over the net to
+                make it land on the other team's side of the court. Each team
+                typically has 6 players on the court at once. There are
+                different versions available for specific circumstances in order
+                to offer the versatility of the game to everyone.
+              </p>
+              <p>
+                A team can touch a volleyball a maximum of three times before it
+                must go over the net. The usual sequence is the dig where a
+                person bumps the ball to pass it, a set, the setter passes to
+                someone able to spike and then the spike where a person slams
+                the ball over the net onto the opponents side of the court.
+              </p>
+            </div>
+          </div>
+          <img
+            width="500"
+            height="350"
+            src="images/woman-bumping-ball.jpg"
+            alt="" />
+        </div>
+      </section>
+
+      <section style="background-color: #474747; padding: 48px">
+        <h3 style="color: #f8f8ff">Skills and Techniques</h3>
+        <div id="fundamental-skills">
+          <div>
+            <h4>Serving</h4>
+            <p>
+              Serving is the act of putting the ball into play. There are
+              various types of serves, including underhand, overhand, and jump
+              serves.<br />
+              To serve the ball, you go behind the out of bounds line and hit
+              the ball with your hand to send it over the net.
+            </p>
+          </div>
+          <div>
+            <h4>Bumping</h4>
+            <p>
+              Bumping (also known as forearm pass) is used to pass the ball to a
+              teammate. Its typically the first touch. It involves using the
+              forearms to create a platform for the ball to bounce off of. There
+              are many ways to bump a ball but its important that you use both
+              arms most of the time to maintain accuracy and strength.
+            </p>
+          </div>
+          <div>
+            <h4>Setting</h4>
+            <p>
+              Setting is the act of preparing the ball for an attack. The setter
+              touches the ball after the bump and before the spike, aiming to
+              deliver a precise ball to the spiker. <br />
+              To set a ball, position yourself under the volleyball, create a
+              triangle with your hands and use your legs to push upwards.
+            </p>
+          </div>
+          <div>
+            <h4>Blocking</h4>
+            <p>
+              Blocking is a defensive skill that people in the front row use to
+              prevent the ball from going over the net.<br />
+              To block effectively, you must time your jump to meet the ball at
+              its highest point and use your hands to create a solid barrier.
+            </p>
+          </div>
+          <div>
+            <h4>Spiking</h4>
+            <p>
+              Spiking is the act of attacking the ball with force, aiming to
+              score points by slamming the ball down into the opponent's court.
+              A successful spike requires timing, power, and precision.<br />
+              To spike a ball, approach the net with speed, jump off both feet,
+              and swing your arm to hit the ball at its highest point.
+            </p>
+          </div>
+        </div>
+        <!-- 
+          This is going to hold a grid that shows GIFs of the different skills and techniques
+        -->
+        <div id="skills-gallery-container">
+          <figure>
+            <img
+              src="images/person-serving-volleyball.png"
+              alt="A volleyball player serving the ball." />
+            <figcaption>Serving</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="images/person-bumping-ball.gif"
+              alt="A volleyball player passing the ball." />
+            <figcaption>Bumping</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="images/Volleyball Setting GIF by GoDuquesne.gif"
+              alt="A volleyball player setting the ball." />
+            <figcaption>Setting</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="images/volleyball spike GIF by Black Hills State University.gif"
+              alt="A volleyball player spiking the ball." />
+            <figcaption>Spiking</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="images/College Sports Sport GIF by NCAA Championships.gif"
+              alt="A volleyball player blocking the ball." />
+            <figcaption>Blocking</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="images/person-digging-for-volleyball.webp"
+              alt="A volleyball player digging the ball." />
+            <figcaption>Digging</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section
+        id="core-rules-container"
+        style="background-color: #555555; padding: 16px">
+        <h3 style="color: ghostwhite">The Core Rules</h3>
+        <div id="core-rules">
+          <div class="core-rule-card">
+            <h4>The Three-Hit Limit</h4>
+            <img
+              src="images/volleyball-player-serving-ball-black-white-vector-outline_231873-6393.jpg"
+              width="150px"
+              height="150px" />
+            <p>
+              When the ball comes to your side, you can only hit the ball 3
+              times to get it over the net. You <b>cannot</b> hit the ball 2
+              times in a row.
+            </p>
+          </div>
+          <div class="core-rule-card">
+            <h4>Boundaries</h4>
+            <img
+              src="images/volleyball-court.png"
+              width="200px"
+              height="100px"
+              alt="Birds eye view of a volleyball court." />
+            <ul id="boundaries-list-rule">
+              <li>The server must serve from behind the end line.</li>
+              <li>You can't touch the volleyball net.</li>
+              <li>
+                The ball must land within the opponent's court boundaries.
+              </li>
+            </ul>
+          </div>
+
+          <div class="core-rule-card">
+            <h4>Scoring</h4>
+            <ul>
+              <li>
+                A point is scored when the ball lands on the opponent's court or
+                it goes out of bounds.
+              </li>
+              <li>
+                Matches are typically played to 25 points, and a team must win
+                by 2 points.
+              </li>
+              <li>
+                In volleyball, the team winning a rally scores a point. When the
+                receiving team wins a rally, it gains a point and the right to
+                serve, and its players rotate one position clockwise.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 style="padding: 16px">Key Positions</h3>
+
+        <!-- 
+          Key positions in volleyball and their roles.
+          This will be a grid
+        -->
+        <div id="volleyball-positions-container">
+          <div class="volleyball-position-card">
+            <h4>Setter</h4>
+            <p>
+              The "control tower" who touches the ball more than anyone else and
+              sets up attacks. They usually get the second touch.
+            </p>
+            <img
+              style="object-position: center 0px"
+              src="images/volleyball-setter-silhouette-000000-xl.png"
+              alt="" />
+          </div>
+          <div class="volleyball-position-card">
+            <h4>Libero</h4>
+            <p>
+              The great receiver specialist who typically gets the ball first
+              and plays a key role in saving.
+            </p>
+            <img src="images/libero-haikyuu.webp" alt="" />
+          </div>
+          <div class="volleyball-position-card">
+            <h4>Spiker</h4>
+            <p>
+              The primary attacker who aims to score points by slamming the ball
+              over the net. They typically attack last from the front row.
+            </p>
+            <img src="images/Spiker.webp" alt="" />
+          </div>
+          <div class="volleyball-position-card">
+            <h4>Middle Blocker</h4>
+            <p>
+              The player who specializes in blocking the opponent's attacks at
+              the net. This person is usually tall and has good timing to jump
+              and intercept the ball.
+            </p>
+            <img src="images/volleyball-middle-blocker.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <h4>Volleyball</h4>
+      <ul>
+        <li>
+          <a href="https://www.instagram.com/volleyball/">
+            <img
+              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f14845cf1c931e2_DIMENSIONS_Social_Instagram.svg"
+          /></a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/volleyball/">
+            <img
+              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434d86ae4be2b1b05e79_DIMENSIONS_Social_Facebook.svg"
+              alt=""
+          /></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/volleyball">
+            <img
+              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f1484082cc931e4_DIMENSIONS_Social_Twitter.svg"
+              alt=""
+          /></a>
+        </li>
+      </ul>
+      Copyright&copy; Chizzy Nwankwo 2026
+    </footer>
+  </body>
+</html>
