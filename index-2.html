@@ -103,9 +103,10 @@
       .volleyball-position-card img {
         width: 150px;
         height: 150px;
-        margin: 0 0 16px 16px;
+        margin-top: -40px;
         object-fit: cover;
         float: right;
+        overflow: hidden;
       }
       .volleyball-position-card p {
         color: ghostwhite;
@@ -203,6 +204,17 @@
       #skills-gallery-container figcaption {
         background-color: #b4b4b4;
         text-align: center;
+      }
+
+      #position-content {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+      #position-content img {
+        margin: 16px;
+      }
+      #position-content p {
+        width: 80%;
       }
     </style>
   </head>
@@ -421,14 +433,16 @@
         <div id="volleyball-positions-container">
           <div class="volleyball-position-card">
             <h4>Setter</h4>
-            <p>
-              The "control tower" who touches the ball more than anyone else and
-              sets up attacks. They usually get the second touch.
-            </p>
-            <img
-              style="object-position: center 0px"
-              src="images/volleyball-setter-silhouette-000000-xl.png"
-              alt="" />
+            <div id="position-content">
+              <p>
+                The "control tower" who touches the ball more than anyone else
+                and sets up attacks. They usually get the second touch.
+              </p>
+              <img
+                style="object-position: center 0px"
+                src="images/volleyball-setter-silhouette-000000-xl.png"
+                alt="" />
+            </div>
           </div>
           <div class="volleyball-position-card">
             <h4>Libero</h4>
