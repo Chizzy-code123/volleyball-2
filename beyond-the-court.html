@@ -126,7 +126,7 @@
         color: ghostwhite;
       }
 
-      .haikyuu-section {
+      #haikyuu-section {
         background-color: #1b1b1b;
         padding: 80px 20px;
         margin-top: 100px;
@@ -143,7 +143,7 @@
         margin-top: 600px;
       }
 
-      .haikyuu-container {
+      #haikyuu-container {
         max-width: 900px;
         margin: 0 auto;
         display: flex;
@@ -151,7 +151,7 @@
         gap: 48px;
       }
 
-      .haikyuu-section img {
+      #haikyuu-section img {
         width: 100%;
         height: 300px;
         object-fit: cover;
@@ -161,7 +161,7 @@
         z-index: -2;
       }
 
-      .haikyuu-section::after {
+      #haikyuu-section::after {
         content: "";
         position: absolute;
         top: 0;
@@ -179,15 +179,11 @@
         );
       }
 
-      /* Header */
-      .haikyuu-header {
+      #haikyuu-container h3 {
         text-align: center;
         border-bottom: 3px solid #ff7a00;
         padding-bottom: 24px;
-      }
-
-      .haikyuu-header h3 {
-        font-size: 3rem;
+        font-size: 48px;
         color: ghostwhite;
         margin: 0 0 8px 0;
         letter-spacing: 2px;
@@ -195,14 +191,7 @@
         text-decoration: none;
       }
 
-      .haikyuu-subtitle {
-        color: #aaa;
-        font-size: 1rem;
-        margin: 0;
-        font-style: italic;
-      }
-
-      .haikyuu-grid {
+      #haikyuu-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 24px;
@@ -215,9 +204,8 @@
         border-radius: 4px;
       }
 
-      .haikyuu-card h3 {
+      .haikyuu-card h4 {
         color: ghostwhite;
-        font-size: 1.1rem;
         margin: 0 0 12px 0;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -229,7 +217,7 @@
         margin: 0;
       }
 
-      .haikyuu-quote {
+      #haikyuu-quote {
         text-align: center;
         padding: 40px 32px;
         background-color: #242424;
@@ -239,15 +227,15 @@
         background-position: center;
       }
 
-      .haikyuu-quote blockquote {
+      #haikyuu-quote blockquote {
         color: #fff;
-        font-size: 1.25rem;
+        font-size: 18px;
         font-style: italic;
         line-height: 1.8;
         margin: 0 0 16px 0;
       }
 
-      .haikyuu-quote cite {
+      #haikyuu-quote cite {
         color: #ff7a00;
         font-size: 0.9rem;
         letter-spacing: 1px;
@@ -306,7 +294,7 @@
   <header>
     <nav>
       <ul>
-        <li><a href="index-2.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="beyond-the-court.html">Beyond The Court</a></li>
       </ul>
     </nav>
@@ -361,7 +349,8 @@
         <img
           width="500px"
           height="auto"
-          src="images/volleyball-paris-1956.webp" />
+          src="images/volleyball-paris-1956.webp"
+          loading="lazy" />
       </div>
     </section>
 
@@ -379,7 +368,11 @@
       <div id="famous-volleyball-players-and-tournaments">
         <div>
           <h4>1. Karch Kiraly</h4>
-          <img width="200px" height="200px" src="images/karch-kiraly.webp" />
+          <img
+            width="200px"
+            height="200px"
+            src="images/karch-kiraly.webp"
+            loading="lazy" />
           <p>
             Widely regarded as one of the greatest volleyball players of all
             time, Karch Kiarly is an American former professional volleyball
@@ -405,7 +398,8 @@
           <img
             width="200px"
             height="200px"
-            src="images/wilfredo-leon-volleyball-player.webp" />
+            src="images/wilfredo-leon-volleyball-player.webp"
+            loading="lazy" />
           <p>
             Wilfredo León is a former Cuban professional volleyball player that
             plays for Poland. He started playing volleyball before reaching his
@@ -425,7 +419,11 @@
         <hr />
         <div>
           <h4>3. Tijana Bošković</h4>
-          <img width="200px" height="200px" src="images/tijana.webp" />
+          <img
+            width="200px"
+            height="200px"
+            src="images/tijana.webp"
+            loading="lazy" />
           <p>
             Tijana Bošković is a Serbian professional volleyball player who
             plays as a middle blocker. She is widely considered one of the best
@@ -470,7 +468,8 @@
               margin: 0 auto;
               margin-bottom: 16px;
             "
-            src="images/russian-volleyball-players-celebrating-after-comeback.avif" />
+            src="images/russian-volleyball-players-celebrating-after-comeback.avif"
+            loading="lazy" />
           <a
             style="display: block; margin: 0 auto; text-align: center"
             class="reference-link"
@@ -501,23 +500,22 @@
     </section>
 
     <div id="haikyuu-section-divider">
-      <img width="40%" src="images/Section Divider.png" />
+      <img width="40%" src="images/Section Divider.png" loading="lazy" />
       <img
         id="hinata-flying-img"
         width="239px"
         height="341px"
-        src="images/hinata-flying-cropped-bgremoved.png" />
+        src="images/hinata-flying-cropped-bgremoved.png"
+        loading="lazy" />
     </div>
-    <section class="haikyuu-section">
-      <img src="images/hinata-and-kageyama-Cropped.avif" />
-      <div class="haikyuu-container">
-        <div class="haikyuu-header">
-          <h3>Haikyuu!!: The Anime That Connects</h3>
-        </div>
+    <section id="haikyuu-section">
+      <img src="images/hinata-and-kageyama-Cropped.avif" loading="lazy" />
+      <div id="haikyuu-container">
+        <h3>Haikyuu!!: The Anime That Connects</h3>
 
-        <div class="haikyuu-grid">
+        <div id="haikyuu-grid">
           <div class="haikyuu-card">
-            <h3>How It Inspires People to Play Volleyball</h3>
+            <h4>How It Inspires People to Play Volleyball</h4>
             <p>
               Shoyo, a 15-year old passionate volleyball player wants to become
               like the Little Giant. The problem is, hes short, not very skilled
@@ -529,7 +527,7 @@
           </div>
 
           <div class="haikyuu-card">
-            <h3>Character Development</h3>
+            <h4>Character Development</h4>
             <p>
               From Hinata's relentless determination to Kageyama's growth from a
               lone genius to a true teammate, every character in Haikyuu!!
@@ -540,7 +538,7 @@
           </div>
         </div>
 
-        <div class="haikyuu-quote">
+        <div id="haikyuu-quote">
           <blockquote>
             "The last ones standing are the winners. No matter how many times
             you get knocked down, keep getting back up."
@@ -557,12 +555,14 @@
         <a href="https://www.instagram.com/volleyballcanada/">
           <img
             src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f14845cf1c931e2_DIMENSIONS_Social_Instagram.svg"
+            loading="lazy"
         /></a>
       </li>
       <li>
         <a href="https://www.facebook.com/VolleyballCanada/">
           <img
             src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434d86ae4be2b1b05e79_DIMENSIONS_Social_Facebook.svg"
+            loading="lazy"
             alt=""
         /></a>
       </li>
@@ -570,10 +570,17 @@
         <a href="https://x.com/VBallCanada">
           <img
             src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f1484082cc931e4_DIMENSIONS_Social_Twitter.svg"
+            loading="lazy"
             alt=""
         /></a>
       </li>
     </ul>
     Copyright&copy; Chizzy Nwankwo 2026
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="beyond-the-court.html">Beyond The Court</a></li>
+      </ul>
+    </nav>
   </footer>
 </html>

@@ -51,7 +51,7 @@
 
       #core-rules {
         display: grid;
-        grid-template-columns: repeat(3, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         grid-template-rows: repeat(auto-fill, 500px);
         margin-top: 20px;
         gap: 8px;
@@ -81,6 +81,7 @@
         color: #171717;
         width: 80%;
         display: block;
+        margin: 0;
       }
 
       #volleyball-positions-container {
@@ -100,24 +101,20 @@
         height: 100%;
       }
 
-      .volleyball-position-card img {
-        width: 150px;
-        height: 150px;
-        margin-top: -40px;
-        object-fit: cover;
-        float: right;
-        overflow: hidden;
-      }
-      .volleyball-position-card p {
-        color: ghostwhite;
-        margin: 16px;
-      }
-
       .volleyball-position-card h4 {
         font-size: 30px;
         margin: 20px;
         color: ghostwhite;
         text-decoration: underline #ffa200;
+      }
+      .position-content img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        overflow: hidden;
+      }
+      .position-content p {
+        color: ghostwhite;
       }
 
       @media (max-width: 1169px) {
@@ -189,8 +186,8 @@
       }
       #skills-gallery-container {
         display: grid;
-        grid-template-columns: repeat(3, minmax(200px, 1fr));
-        grid-template-rows: 150px;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
         gap: 48px;
         margin-top: 16px;
       }
@@ -206,15 +203,29 @@
         text-align: center;
       }
 
-      #position-content {
+      .position-content {
         display: flex;
-        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 32px;
       }
-      #position-content img {
-        margin: 16px;
+      .position-content p {
+        width: 50%;
+        flex: 1;
       }
-      #position-content p {
-        width: 80%;
+
+      @media (max-width: 818px) {
+        .position-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .position-content p {
+          width: 100%;
+        }
       }
     </style>
   </head>
@@ -222,7 +233,7 @@
     <header>
       <nav>
         <ul>
-          <li><a href="index-2.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="beyond-the-court.html">Beyond The Court</a></li>
         </ul>
       </nav>
@@ -269,7 +280,8 @@
             width="500"
             height="350"
             src="images/woman-bumping-ball.jpg"
-            alt="" />
+            alt=""
+            loading="lazy" />
         </div>
       </section>
 
@@ -333,37 +345,43 @@
           <figure>
             <img
               src="images/person-serving-volleyball.png"
-              alt="A volleyball player serving the ball." />
+              alt="A volleyball player serving the ball."
+              loading="lazy" />
             <figcaption>Serving</figcaption>
           </figure>
           <figure>
             <img
               src="images/person-bumping-ball.gif"
-              alt="A volleyball player passing the ball." />
+              alt="A volleyball player passing the ball."
+              loading="lazy" />
             <figcaption>Bumping</figcaption>
           </figure>
           <figure>
             <img
               src="images/Volleyball Setting GIF by GoDuquesne.gif"
-              alt="A volleyball player setting the ball." />
+              alt="A volleyball player setting the ball."
+              loading="lazy" />
             <figcaption>Setting</figcaption>
           </figure>
           <figure>
             <img
               src="images/volleyball spike GIF by Black Hills State University.gif"
-              alt="A volleyball player spiking the ball." />
+              alt="A volleyball player spiking the ball."
+              loading="lazy" />
             <figcaption>Spiking</figcaption>
           </figure>
           <figure>
             <img
               src="images/College Sports Sport GIF by NCAA Championships.gif"
-              alt="A volleyball player blocking the ball." />
+              alt="A volleyball player blocking the ball."
+              loading="lazy" />
             <figcaption>Blocking</figcaption>
           </figure>
           <figure>
             <img
               src="images/person-digging-for-volleyball.webp"
-              alt="A volleyball player digging the ball." />
+              alt="A volleyball player digging the ball."
+              loading="lazy" />
             <figcaption>Digging</figcaption>
           </figure>
         </div>
@@ -379,7 +397,8 @@
             <img
               src="images/volleyball-player-serving-ball-black-white-vector-outline_231873-6393.jpg"
               width="150px"
-              height="150px" />
+              height="150px"
+              loading="lazy" />
             <p>
               When the ball comes to your side, you can only hit the ball 3
               times to get it over the net. You <b>cannot</b> hit the ball 2
@@ -392,7 +411,8 @@
               src="images/volleyball-court.png"
               width="200px"
               height="100px"
-              alt="Birds eye view of a volleyball court." />
+              alt="Birds eye view of a volleyball court."
+              loading="lazy" />
             <ul id="boundaries-list-rule">
               <li>The server must serve from behind the end line.</li>
               <li>You can't touch the volleyball net.</li>
@@ -433,7 +453,7 @@
         <div id="volleyball-positions-container">
           <div class="volleyball-position-card">
             <h4>Setter</h4>
-            <div id="position-content">
+            <div class="position-content">
               <p>
                 The "control tower" who touches the ball more than anyone else
                 and sets up attacks. They usually get the second touch.
@@ -441,33 +461,44 @@
               <img
                 style="object-position: center 0px"
                 src="images/volleyball-setter-silhouette-000000-xl.png"
-                alt="" />
+                alt="A volleyball player setting the ball."
+                loading="lazy" />
             </div>
           </div>
           <div class="volleyball-position-card">
             <h4>Libero</h4>
-            <p>
-              The great receiver specialist who typically gets the ball first
-              and plays a key role in saving.
-            </p>
-            <img src="images/libero-haikyuu.webp" alt="" />
+            <div class="position-content">
+              <p>
+                The great receiver specialist who typically gets the ball first
+                and plays a key role in saving.
+              </p>
+              <img src="images/libero-haikyuu.webp" alt="" loading="lazy" />
+            </div>
           </div>
           <div class="volleyball-position-card">
             <h4>Spiker</h4>
-            <p>
-              The primary attacker who aims to score points by slamming the ball
-              over the net. They typically attack last from the front row.
-            </p>
-            <img src="images/Spiker.webp" alt="" />
+            <div class="position-content">
+              <p>
+                The primary attacker who aims to score points by slamming the
+                ball over the net. They typically attack last from the front
+                row.
+              </p>
+              <img src="images/Spiker.webp" alt="" loading="lazy" />
+            </div>
           </div>
           <div class="volleyball-position-card">
             <h4>Middle Blocker</h4>
-            <p>
-              The player who specializes in blocking the opponent's attacks at
-              the net. This person is usually tall and has good timing to jump
-              and intercept the ball.
-            </p>
-            <img src="images/volleyball-middle-blocker.jpg" alt="" />
+            <div class="position-content">
+              <p>
+                The player who specializes in blocking the opponent's attacks at
+                the net. This person is usually tall and has good timing to jump
+                and intercept the ball.
+              </p>
+              <img
+                src="images/volleyball-middle-blocker.jpg"
+                alt=""
+                loading="lazy" />
+            </div>
           </div>
         </div>
       </section>
@@ -480,13 +511,16 @@
           <a href="https://www.instagram.com/volleyball/">
             <img
               src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f14845cf1c931e2_DIMENSIONS_Social_Instagram.svg"
-          /></a>
+              alt="Instagram"
+              loading="lazy" />
+          </a>
         </li>
         <li>
           <a href="https://www.facebook.com/volleyball/">
             <img
               src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434d86ae4be2b1b05e79_DIMENSIONS_Social_Facebook.svg"
               alt=""
+              loading="lazy"
           /></a>
         </li>
         <li>
@@ -494,10 +528,17 @@
             <img
               src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f1484082cc931e4_DIMENSIONS_Social_Twitter.svg"
               alt=""
+              loading="lazy"
           /></a>
         </li>
       </ul>
       Copyright&copy; Chizzy Nwankwo 2026
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="beyond-the-court.html">Beyond The Court</a></li>
+        </ul>
+      </nav>
     </footer>
   </body>
 </html>
