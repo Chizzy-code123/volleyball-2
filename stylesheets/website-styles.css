@@ -223,10 +223,13 @@ footer {
 footer nav {
   margin-top: 20px;
   background: transparent;
+  padding: 16px;
 }
 
 footer nav a {
   font-weight: 100;
+  transition: none !important;
+  animation: none !important;
 }
 
 footer ul {
@@ -237,6 +240,26 @@ footer ul {
   padding: 0;
 }
 
+footer hr {
+  width: 100vw;
+  border-color: #737373;
+  margin: 16px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
 footer h4 {
   font-size: 40px;
+}
+
+#footer-content {
+  display: flex;
+  flex-direction: column;
+}
+#footer-legal-copyright {
+  /* justify-content: flex-start; */
+  margin-right: auto;
+  /* margin: 16px; */
+  margin-left: 10px;
+  margin-top: 10px;
 }

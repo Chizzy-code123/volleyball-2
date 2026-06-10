@@ -3,7 +3,7 @@
   Course: Web Development II
   Teacher: Mr. Hardman
   School: Pembina Trails Collegiate
-  Date Last Modified: June 7 2026
+  Date Last Modified: June 9 2026
 -->
 <!doctype html>
 <html lang="en">
@@ -11,10 +11,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Volleyball</title>
+    <link rel="icon" type="image/png" href="images/white-volleyball.png" />
     <link rel="stylesheet" href="stylesheets/website-styles.css" />
     <script src="back-to-top.js" defer></script>
 
     <style>
+      /* First Container */
+
+      /* 
+        This styles the container that holds two paragraphs
+        and an image in a flex container. It centers the content and pushes
+        away from the quote above it.
+      */
       #what-is-volleyball-container {
         display: flex;
         flex-direction: row;
@@ -23,32 +31,71 @@
         flex-wrap: wrap;
       }
 
-      #core-rules h4 {
-        text-align: center;
-        padding: 20px 0;
-        font-size: 20px;
-      }
-
+      /* 
+        This styles the paragraphs in the container. I set the width as 700 because 
+        I wanted it to fit perfectly on a mobile device since this is an
+        information website mostly.
+      */
       #what-is-volleyball-container p {
         max-width: 700px;
         padding: 16px;
       }
 
+      /* 
+        Here I am styling the image. I use object-fit 
+        because I don't want the image to become squished.
+        box-shadow creates a shadow around the html layout
+      */
       #what-is-volleyball-container img {
         border-radius: 8px;
         margin: 30px;
-        width: 400px;
-        height: 500px;
+        width: 100%;
+        max-width: 300px;
+        max-height: 500px;
         object-fit: cover;
-        background: transparent;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.2));
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Second Container */
+
+      /* 
+        This styles the skills container where it talks about the main
+        skills you need when playing volleyball. 
+        Its flex direction is set to column because I want the content to go downwards. 
+       */
+      #skills-container {
+        display: flex;
+        flex-direction: column;
+        margin-right: auto;
+        margin-left: auto;
+        align-content: center;
+        width: 100%;
+        background-color: #555555;
+        border-radius: 8px;
+        padding: 32px;
+      }
+      #skills-container h4,
+      #skills-container p {
+        color: ghostwhite;
+        background-color: #555555;
+      }
+
+      .fundamental-skill {
+        max-width: 900px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 16px;
+        border-bottom: 4px solid #ffa200;
+      }
+
+      .fundamental-skill h4 {
+        text-decoration: none;
       }
 
       #core-rules-container {
         margin-top: 40px;
+        border-radius: 8px;
       }
-
       #core-rules {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -57,7 +104,11 @@
         gap: 8px;
         width: 100%;
       }
-
+      #core-rules h4 {
+        text-align: center;
+        padding: 20px 0;
+        font-size: 20px;
+      }
       .core-rule-card {
         display: flex;
         flex-direction: column;
@@ -149,41 +200,14 @@
         }
       }
 
-      #fundamental-skills {
-        display: flex;
-        flex-direction: column;
-        margin-right: auto;
-        margin-left: auto;
-        align-content: center;
-        width: 100%;
-      }
-      #fundamental-skills h4,
-      #fundamental-skills p {
-        color: ghostwhite;
-      }
-
-      #fundamental-skills div {
-        max-width: 900px;
-        margin-right: auto;
-        margin-left: auto;
-        padding: 16px;
-        border-bottom: 4px solid #ffa200;
-      }
-
       #beginning-quote {
-        background-color: #ffa743;
+        background-color: #ff8b3db2;
         padding: 16px;
         border-radius: 8px;
         margin-top: 50px;
+        font-size: 1.8rem;
       }
-      #beginning-quote blockquote {
-        font-size: 24px;
-        font-style: italic;
-      }
-      #beginning-quote cite {
-        font-size: 20px;
-        font-weight: bold;
-      }
+
       #skills-gallery-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -244,15 +268,14 @@
     <main>
       <a id="back-to-top" href="#"><img src="images/arrow-up.png" /></a>
 
-      <div id="beginning-quote">
-        <blockquote>
-          "You're either getting better or getting worse. I don't think you stay
-          the same in sports. If we want to achieve something special in the
-          game, then those players have to recognize that they're responsible
-          every day for getting better."
-        </blockquote>
-        <cite>-<b>Russ Rose</b></cite>
-      </div>
+      <p id="beginning-quote">
+        "You're either getting better or getting worse. I don't think you stay
+        the same in sports. If we want to achieve something special in the game,
+        then those players have to recognize that they're responsible every day
+        for getting better."
+        <br />
+        <span style="font-weight: bold; font-style: italic">-Russ Rose</span>
+      </p>
 
       <section>
         <div id="what-is-volleyball-container">
@@ -285,10 +308,10 @@
         </div>
       </section>
 
-      <section style="background-color: #474747; padding: 48px">
+      <section id="skills-container">
         <h3 style="color: #f8f8ff">Skills and Techniques</h3>
-        <div id="fundamental-skills">
-          <div>
+        <div>
+          <div class="fundamental-skill">
             <h4>Serving</h4>
             <p>
               Serving is the act of putting the ball into play. There are
@@ -298,7 +321,7 @@
               the ball with your hand to send it over the net.
             </p>
           </div>
-          <div>
+          <div class="fundamental-skill">
             <h4>Bumping</h4>
             <p>
               Bumping (also known as forearm pass) is used to pass the ball to a
@@ -308,7 +331,7 @@
               arms most of the time to maintain accuracy and strength.
             </p>
           </div>
-          <div>
+          <div class="fundamental-skill">
             <h4>Setting</h4>
             <p>
               Setting is the act of preparing the ball for an attack. The setter
@@ -318,7 +341,7 @@
               triangle with your hands and use your legs to push upwards.
             </p>
           </div>
-          <div>
+          <div class="fundamental-skill">
             <h4>Blocking</h4>
             <p>
               Blocking is a defensive skill that people in the front row use to
@@ -327,7 +350,7 @@
               its highest point and use your hands to create a solid barrier.
             </p>
           </div>
-          <div>
+          <div class="fundamental-skill">
             <h4>Spiking</h4>
             <p>
               Spiking is the act of attacking the ball with force, aiming to
@@ -505,40 +528,46 @@
     </main>
 
     <footer>
-      <h4>Volleyball</h4>
-      <ul>
-        <li>
-          <a href="https://www.instagram.com/volleyball/">
-            <img
-              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f14845cf1c931e2_DIMENSIONS_Social_Instagram.svg"
-              alt="Instagram"
-              loading="lazy" />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/volleyball/">
-            <img
-              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434d86ae4be2b1b05e79_DIMENSIONS_Social_Facebook.svg"
-              alt=""
-              loading="lazy"
-          /></a>
-        </li>
-        <li>
-          <a href="https://twitter.com/volleyball">
-            <img
-              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f1484082cc931e4_DIMENSIONS_Social_Twitter.svg"
-              alt=""
-              loading="lazy"
-          /></a>
-        </li>
-      </ul>
-      Copyright&copy; Chizzy Nwankwo 2026
-      <nav>
+      <div id="footer-content">
+        <h4>Volleyball</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="beyond-the-court.html">Beyond The Court</a></li>
+          <li>
+            <a href="https://www.instagram.com/volleyball/">
+              <img
+                src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f14845cf1c931e2_DIMENSIONS_Social_Instagram.svg"
+                alt="Instagram"
+                loading="lazy" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/volleyball/">
+              <img
+                src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434d86ae4be2b1b05e79_DIMENSIONS_Social_Facebook.svg"
+                alt=""
+                loading="lazy"
+            /></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/volleyball">
+              <img
+                src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f1484082cc931e4_DIMENSIONS_Social_Twitter.svg"
+                alt=""
+                loading="lazy"
+            /></a>
+          </li>
         </ul>
-      </nav>
+        <hr />
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="beyond-the-court.html">Beyond The Court</a></li>
+          </ul>
+        </nav>
+        <hr />
+        <div id="footer-legal-copyright">
+          &copy; Chizzy Nwankwo 2026. All rights reserved.
+        </div>
+      </div>
     </footer>
   </body>
 </html>

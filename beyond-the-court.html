@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beyond the Court</title>
     <link rel="stylesheet" href="stylesheets/website-styles.css" />
+    <link rel="icon" type="image/png" href="images/white-volleyball.png" />
     <script src="back-to-top.js" defer></script>
     <style>
       body {
@@ -92,7 +93,7 @@
         #famous-volleyball-players-and-tournaments img {
           float: none;
           display: block;
-          margin: 0 auto;
+          margin: 10px auto;
         }
         #famous-volleyball-players-and-tournaments h4 {
           text-align: center;
@@ -120,10 +121,14 @@
 
       #beach-volleyball-container h3 {
         color: ghostwhite;
+        text-align: center;
       }
 
       #beach-volleyball-container p {
         color: ghostwhite;
+        background-color: #9b9b9b6f;
+        padding: 16px;
+        margin-top: 16px;
       }
 
       #haikyuu-section {
@@ -149,6 +154,27 @@
         display: flex;
         flex-direction: column;
         gap: 48px;
+        justify-content: center;
+      }
+
+      #haikyuu-container iframe {
+        width: 100%;
+      }
+      #haikyuu-container h3 {
+        text-align: center;
+        border-bottom: 3px solid #ff7a00;
+        padding-bottom: 24px;
+        font-size: 48px;
+        color: ghostwhite;
+        margin: 0 0 8px 0;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+
+      #haikyuu-container h4 {
+        text-align: center;
+        color: ghostwhite;
       }
 
       #haikyuu-section img {
@@ -177,18 +203,6 @@
           rgba(27, 27, 27, 0) 35%,
           #1b1b1b 100%
         );
-      }
-
-      #haikyuu-container h3 {
-        text-align: center;
-        border-bottom: 3px solid #ff7a00;
-        padding-bottom: 24px;
-        font-size: 48px;
-        color: ghostwhite;
-        margin: 0 0 8px 0;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        text-decoration: none;
       }
 
       #haikyuu-grid {
@@ -222,23 +236,11 @@
         padding: 40px 32px;
         background-color: #242424;
         border-radius: 8px;
-        position: relative;
-        background-size: cover;
-        background-position: center;
-      }
-
-      #haikyuu-quote blockquote {
         color: #fff;
         font-size: 18px;
         font-style: italic;
         line-height: 1.8;
         margin: 0 0 16px 0;
-      }
-
-      #haikyuu-quote cite {
-        color: #ff7a00;
-        font-size: 0.9rem;
-        letter-spacing: 1px;
       }
 
       #haikyuu-section-divider {
@@ -248,33 +250,25 @@
         width: 40%;
         width: 100vw;
         height: 20%;
+        margin-top: 40px;
       }
 
       #hinata-flying-img {
         justify-self: flex-end;
         position: relative;
+        width: 300px;
+        height: auto;
         left: 25%;
         transform: translateY(60%);
-        transform: scale(1.5);
-        animation:
-          reveal linear forwards,
-          fly 2s linear ease-out infinite;
-        animation-timeline: view();
-        animation-range: entry 0% cover 50%;
+        animation: image-float 3s ease-in-out infinite alternate;
       }
 
-      @keyframes reveal {
+      @keyframes image-float {
+        from {
+          transform: translateY(0%);
+        }
         to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      @keyframes fly {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(100px);
+          transform: translateY(-20%);
         }
       }
     </style>
@@ -309,12 +303,15 @@
         <h3>History of Volleyball</h3>
         <p>
           Volleyball was invented in 1895 by William G. Morgan, a physical
-          director at the <b>Young Men's Christian Association (YMCA)</b> in
-          Massachusetts. He wanted to create a new game that combined elements
-          of basketball, baseball, tennis, and handball. The original name for
-          the game was "Mintonette," but it was later changed to "Volleyball"
-          after a demonstration game where a player remarked that the ball was
-          volleying back and forth over the net.
+          director at the
+          <span style="font-weight: bold"
+            >Men's Christian Association (YMCA)</span
+          >
+          in Massachusetts. He wanted to create a new game that combined
+          elements of basketball, baseball, tennis, and handball. The original
+          name for the game was "Mintonette," but it was later changed to
+          "Volleyball" after a demonstration game where a player remarked that
+          the ball was volleying back and forth over the net.
         </p>
         <p>
           The rules to play the game kept changing over the years like the
@@ -405,8 +402,12 @@
             plays for Poland. He started playing volleyball before reaching his
             teens and got debuted for the Cuban national team at the age of 14.
             His position is outside hitter. Wilfredo is famous for his powerful
-            jump serves that average <b>130km/h</b> and an impressive hitting
-            point that allows him to spike over almost any block in the world.
+            jump serves that average
+            <span style="font-weight: bold; text-decoration: underline"
+              >135km/h</span
+            >
+            and an impressive hitting point that allows him to spike over almost
+            any block in the world.
           </p>
           <br />
           <a
@@ -483,13 +484,13 @@
 
     <section id="beach-volleyball-container">
       <div>
-        <h3 style="text-align: center">Beach Volleyball</h3>
+        <h3>Beach Volleyball</h3>
         <p>
-          Beach volleyball is a popular variant of indoor volleyball.Born on the
-          sunny shores of Santa Monica, California, in the 1920s, the beach game
-          strips the sport down to its absolute essentials: just two players per
-          side covering a sand court that is only slightly smaller than an
-          indoor one.<br />
+          Beach volleyball is a popular variant of indoor volleyball. Born on
+          the sunny shores of Santa Monica, California, in the 1920s, the beach
+          game strips the sport down to its absolute essentials: just two
+          players per side covering a sand court that is only slightly smaller
+          than an indoor one.<br />
           The volleyball is differernt from the indoor one as it is slightly
           larger and lighter to make it easier to control in the wind. The rules
           are also slightly different, with matches being played as
@@ -538,49 +539,75 @@
           </div>
         </div>
 
-        <div id="haikyuu-quote">
-          <blockquote>
-            "The last ones standing are the winners. No matter how many times
-            you get knocked down, keep getting back up."
-          </blockquote>
-          <cite>— Ittetsu Takeda, Haikyuu!!</cite>
-        </div>
+        <p id="haikyuu-quote">
+          "The last ones standing are the winners. No matter how many times you
+          get knocked down, keep getting back up."
+          <br />
+          <span style="color: #ff7a00; font-size: 16px; letter-spacing: 1px"
+            >— Ittetsu Takeda, Haikyuu!!</span
+          >
+        </p>
+        <h4>Watch the Trailer!</h4>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/JOGp2c7-cKc?si=Vdg6m8lShmprSt7l"
+          title="YouTube video player"
+          frameborder="0"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
       </div>
     </section>
   </main>
   <footer>
-    <h4>Volleyball</h4>
-    <ul>
-      <li>
-        <a href="https://www.instagram.com/volleyballcanada/">
-          <img
-            src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f14845cf1c931e2_DIMENSIONS_Social_Instagram.svg"
-            loading="lazy"
-        /></a>
-      </li>
-      <li>
-        <a href="https://www.facebook.com/VolleyballCanada/">
-          <img
-            src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434d86ae4be2b1b05e79_DIMENSIONS_Social_Facebook.svg"
-            loading="lazy"
-            alt=""
-        /></a>
-      </li>
-      <li>
-        <a href="https://x.com/VBallCanada">
-          <img
-            src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f1484082cc931e4_DIMENSIONS_Social_Twitter.svg"
-            loading="lazy"
-            alt=""
-        /></a>
-      </li>
-    </ul>
-    Copyright&copy; Chizzy Nwankwo 2026
-    <nav>
+    <div id="footer-content">
+      <h4>Volleyball</h4>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="beyond-the-court.html">Beyond The Court</a></li>
+        <li>
+          <a href="https://www.instagram.com/volleyball/">
+            <img
+              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f14845cf1c931e2_DIMENSIONS_Social_Instagram.svg"
+              alt="Instagram"
+              loading="lazy" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/volleyball/">
+            <img
+              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434d86ae4be2b1b05e79_DIMENSIONS_Social_Facebook.svg"
+              alt=""
+              loading="lazy"
+          /></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/volleyball">
+            <img
+              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f1484082cc931e4_DIMENSIONS_Social_Twitter.svg"
+              alt=""
+              loading="lazy"
+          /></a>
+        </li>
       </ul>
-    </nav>
+      <hr />
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="beyond-the-court.html">Beyond The Court</a></li>
+        </ul>
+      </nav>
+      <hr />
+      <div id="footer-legal-copyright">
+        &copy; Chizzy Nwankwo 2026. All rights reserved.
+      </div>
+    </div>
   </footer>
 </html>
