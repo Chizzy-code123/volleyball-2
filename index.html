@@ -88,6 +88,12 @@
         padding: 32px;
       }
 
+      /* 
+        This styles the gallery container that holds all the
+        GIFs that show the volleyball skills.
+
+        I give the grid a large gap to create space between the GIFs so that the person 
+      */
       #skills-gallery-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -337,6 +343,7 @@
     </style>
   </head>
   <body>
+
     <header>
       <nav>
         <ul>
@@ -349,8 +356,17 @@
     </header>
 
     <main>
-      <a id="back-to-top" href="#"><img src="images/arrow-up.png" /></a>
+      <!-- 
+        Creating a back to top button that will go the bottom right. 
+        
+        The # in the href makes the a tag link to the page the user is in.
+        Adding the arrow up image so that people can understand it brings them up.
+      -->
+      <a id="back-to-top" href="#"><img src="images/arrow-up.png" alt="Arrow up button image." /></a>
 
+      <!-- 
+        This is the beginning quote for the volleyball webpage
+      -->
       <p id="beginning-quote">
         "You're either getting better or getting worse. I don't think you stay
         the same in sports. If we want to achieve something special in the game,
