@@ -16,9 +16,22 @@
     <script src="scripts/back-to-top.js" defer></script>
 
     <style>
+      /* 
+        This styles the quote at the beginning of the page.
+        I made the font size 1.8 rem because the default paragraph size is
+        1.6 and I wanted this one to stand out more.
+      */
+      #beginning-quote {
+        background-color: #ff8b3db2;
+        padding: 16px;
+        border-radius: 8px;
+        margin-top: 50px;
+        font-size: 1.8rem;
+      }
+
       /* First Container */
 
-      /* 
+      /*
         This styles the container that holds two paragraphs
         and an image in a flex container. It centers the content and pushes
         away from the quote above it.
@@ -31,8 +44,8 @@
         flex-wrap: wrap;
       }
 
-      /* 
-        This styles the paragraphs in the container. I set the width as 700 because 
+      /*
+        This styles the paragraphs in the container. I set the width as 700 because
         I wanted it to fit perfectly on a mobile device since this is an
         information website mostly.
       */
@@ -41,8 +54,8 @@
         padding: 16px;
       }
 
-      /* 
-        Here I am styling the image. I use object-fit 
+      /*
+        Here I am styling the image. I use object-fit
         because I don't want the image to become squished.
         box-shadow creates a shadow around the html layout
       */
@@ -58,10 +71,10 @@
 
       /* Second Container */
 
-      /* 
+      /*
         This styles the skills container where it talks about the main
-        skills you need when playing volleyball. 
-        Its flex direction is set to column because I want the content to go downwards. 
+        skills you need when playing volleyball.
+        Its flex direction is set to column because I want the content to go downwards.
        */
       #skills-container {
         display: flex;
@@ -74,146 +87,20 @@
         border-radius: 8px;
         padding: 32px;
       }
-      #skills-container h4,
-      #skills-container p {
-        color: ghostwhite;
-        background-color: #555555;
-      }
 
-      .fundamental-skill {
-        max-width: 900px;
-        margin-right: auto;
-        margin-left: auto;
-        padding: 16px;
-        border-bottom: 4px solid #ffa200;
-      }
+      /* 
+        This styles the gallery container that holds all the
+        GIFs that show the volleyball skills.
 
-      .fundamental-skill h4 {
-        text-decoration: none;
-      }
-
-      #core-rules-container {
-        margin-top: 40px;
-        border-radius: 8px;
-      }
-      #core-rules {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-template-rows: repeat(auto-fill, 500px);
-        margin-top: 20px;
-        gap: 8px;
-        width: 100%;
-      }
-      #core-rules h4 {
-        text-align: center;
-        padding: 20px 0;
-        font-size: 20px;
-      }
-      .core-rule-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #ffa200;
-        margin: 16px;
-        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-        border-radius: 8px;
-        margin-right: auto;
-        margin-left: auto;
-      }
-
-      .core-rule-card img {
-        margin: 16px;
-      }
-
-      .core-rule-card p,
-      .core-rule-card ul {
-        font-size: 16px;
-        text-align: left;
-        color: #171717;
-        width: 80%;
-        display: block;
-        margin: 0;
-      }
-
-      #volleyball-positions-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 16px;
-        justify-content: center;
-        margin: 0 auto;
-      }
-
-      .volleyball-position-card {
-        background-color: #555555;
-        border-radius: 15px;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-        width: 100%;
-        height: 100%;
-      }
-
-      .volleyball-position-card h4 {
-        font-size: 30px;
-        margin: 20px;
-        color: ghostwhite;
-        text-decoration: underline #ffa200;
-      }
-      .position-content img {
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        overflow: hidden;
-      }
-      .position-content p {
-        color: ghostwhite;
-      }
-
-      @media (max-width: 1169px) {
-        #core-rules {
-          flex-direction: column;
-        }
-        #core-rules div {
-          width: 100%;
-          height: auto;
-          justify-content: center;
-        }
-        #core-rules p {
-          text-align: center;
-        }
-        #boundaries-list-rule {
-          width: 50%;
-          margin-left: auto;
-          margin-right: auto;
-          text-align: center;
-        }
-      }
-      @media (max-width: 1148px) {
-        .volleyball-position img {
-          float: none;
-          display: block;
-          margin: 16px auto;
-          bottom: 0px;
-          transform: none;
-        }
-        .volleyball-position p {
-          text-align: center;
-        }
-      }
-
-      #beginning-quote {
-        background-color: #ff8b3db2;
-        padding: 16px;
-        border-radius: 8px;
-        margin-top: 50px;
-        font-size: 1.8rem;
-      }
-
+        I give the grid a large gap to create space between the GIFs so that the person 
+      */
       #skills-gallery-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
         gap: 48px;
         margin-top: 16px;
+        margin: 16px;
       }
 
       #skills-gallery-container img {
@@ -227,20 +114,222 @@
         text-align: center;
       }
 
+      /*
+        This styles the h4 and the paragraph elements within the skills container.
+        I'm making the text color and background white and dark grey.
+      */
+      #skills-container h4,
+      #skills-container p {
+        color: ghostwhite;
+        background-color: #555555;
+      }
+
+      /*
+        Styling each fundamental style div inside the container
+        I give each one a maximum width because I want the content to look even.
+        The container is centered using margin auto.
+        Each one has a border at the bottom to separate them visually.
+      */
+      .fundamental-skill {
+        max-width: 900px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 16px;
+        border-bottom: 4px solid #ffa200;
+      }
+
+      /*
+        Removing the underline on each of those h4 elements
+        because I feel like there are too many underlines and
+        the user will get distracted.
+      */
+      .fundamental-skill h4 {
+        text-decoration: none;
+      }
+
+      /*
+        Styling the section that holds all the core rules
+        I'm giving it a padding of 16px because I want there to be
+        null space for the core rule cards.
+        The background is dark grey to make the cards pop out and so the user will focus more on the content.
+      */
+      #core-rules-container {
+        margin-top: 40px;
+        border-radius: 8px;
+        background-color: #555555;
+        padding: 16px;
+      }
+
+      /* 
+        Styling the h3 in the container and giving it a text color of
+        ghostwhite because the background is darker.
+      */
+      #core-rules-container h3 {
+        color: ghostwhite;
+      }
+
+      /* 
+        Styling the div that holds all the core rules. Making this
+        a grid container so that the cards will all be the same size. 
+        If one card is taller, the others will match its height.
+
+        Giving the grid columns a responsive layout allows
+        for better use of space. I use auto-fit so that the cards
+        can adapt to the available width.
+
+        I also use auto-fill for the rows so that they will 
+        expand to fill the remaining vertical space.
+
+        The margin-top is used to push the cards away from the h3
+      */
+      #core-rules {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-rows: repeat(auto-fill, 500px);
+        margin-top: 20px;
+        gap: 8px;
+      }
+
+      /* 
+        Styling the core rule cards that hold all 3 rules
+        
+        Making them a flexbox so that the content will align
+        to the center and respond one-dimensionally,
+        giving them each a background color that is light so that
+        the content can be easily readable.
+
+        Adding a box shadow helps to lift the cards off the background and gives
+        it more of a 3D appearance.
+      */
+      .core-rule-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffa200;
+        padding: 8px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+      }
+
+      /* 
+        Styling the h4 in each of the cards. Giving it a margin to push it away 
+        from the top of the card and the top of the texts.
+      */
+      .core-rule-card h4 {
+        text-align: center;
+        font-size: 20px;
+        margin: 8px;
+      }
+      /* 
+        Pushing the image inside the card away from the text and title
+      */
+      .core-rule-card img {
+        margin: 16px;
+      }
+
+      /* 
+        Styling the text content inside the card. Giving it a width of 80% 
+        so that it doesn't take up the full width of the card.
+        Also making the display block so that the li tags in the ul won't go sideways but downwards.
+      */
+      .core-rule-card p,
+      .core-rule-card ul {
+        display: block;
+        color: #1b1b1b;
+        width: 80%;
+      }
+
+      /* 
+        Styling the container that holds all the volleyball position cards.
+        I used grid-template-columns and grid-template-rows to create a responsive
+        2x2 grid layout.
+
+        I give each card a gap so that they are spaced evenly.
+      */
+      #volleyball-positions-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      /* 
+        Styling the individual volleyball position cards. Giving 
+        it a border radius to give a more modern and sleek design.
+
+        Adding a box shadow helps to lift the cards off the background and pop out more.
+      */
+      .volleyball-position-card {
+        background-color: #555555;
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      /* 
+        Styling the h4 in each of the cards. Giving it a margin to push it away 
+        from the top of the card and the top of the texts.
+
+        Adding an underline to the h4 do easily distinguish
+        it from the rest of the text.
+      */
+      .volleyball-position-card h4 {
+        margin: 20px;
+        color: ghostwhite;
+        text-decoration: underline #ffa200;
+      }
+
+      /* 
+        Here I am styling the position content container which is
+        a div inside the volleyball position card.
+
+        The reason why I added another div inside was because
+        I didn't like how the h4 was included in the flexbox.
+        I wanted the image to be right next to the text so that
+        the user could see both at the same time. I felt like having the image at the bottom 
+        on a computer would make them want to look at the next card right away instead of
+        paying more attention to the current one.
+
+        Giving a gap so that the image and text are not too close together.
+
+        Giving margin so that the div will be away from the card this is also called giving null space.
+      */
       .position-content {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         gap: 16px;
-        flex-wrap: wrap;
         align-items: center;
         margin: 32px;
       }
-      .position-content p {
-        width: 50%;
-        flex: 1;
+      /* 
+        Giving the images a specific size so that they are uniform across all cards.
+
+        Object-fit is used to specify how the image should be resized to fit its container.
+          cover Makes it so that the image won't stretch or distort, but instead will fill the
+          container while maintaining its aspect ratio.
+      */
+      .position-content img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
       }
 
+      /* 
+        Styling the paragraph inside the position content container.
+        Making the width 50% to leave the other 50% for the image.
+      */
+      .position-content p {
+        width: 50%;
+        color: ghostwhite;
+      }
+
+      /* 
+        Centering everything once the paragraph becomes
+        too skinny next to the image
+        Now I want the paragraph to take up the full width because the image 
+        will now move to the bottom.
+      */
       @media (max-width: 818px) {
         .position-content {
           flex-direction: column;
@@ -254,6 +343,7 @@
     </style>
   </head>
   <body>
+
     <header>
       <nav>
         <ul>
@@ -265,8 +355,17 @@
       <h2>An Introduction to The Sport.</h2>
     </header>
     <main>
-      <a id="back-to-top" href="#"><img src="images/arrow-up.png" /></a>
+      <!-- 
+        Creating a back to top button that will go the bottom right. 
+        
+        The # in the href makes the a tag link to the page the user is in.
+        Adding the arrow up image so that people can understand it brings them up.
+      -->
+      <a id="back-to-top" href="#"><img src="images/arrow-up.png" alt="Arrow up button image." /></a>
 
+      <!-- 
+        This is the beginning quote for the volleyball webpage
+      -->
       <p id="beginning-quote">
         "You're either getting better or getting worse. I don't think you stay
         the same in sports. If we want to achieve something special in the game,
@@ -409,10 +508,8 @@
         </div>
       </section>
 
-      <section
-        id="core-rules-container"
-        style="background-color: #555555; padding: 16px">
-        <h3 style="color: ghostwhite">The Core Rules</h3>
+      <section id="core-rules-container">
+        <h3>The Core Rules</h3>
         <div id="core-rules">
           <div class="core-rule-card">
             <h4>The Three-Hit Limit</h4>
