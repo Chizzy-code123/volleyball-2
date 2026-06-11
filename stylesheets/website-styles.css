@@ -95,6 +95,10 @@ nav a {
   color: ghostwhite;
   font-weight: bold;
   text-decoration: none;
+  /* 
+    This makes the navigation link be a relative position so that the 
+    pseudo-element can be absolutely positioned within it.
+  */
   position: relative;
   font-size: 1.6rem;
 }
@@ -157,6 +161,7 @@ h2 {
   font-size: 36px;
   margin-top: 50px;
   letter-spacing: 2px;
+  -webkit-text-decoration: underline 5px #ff7a00;
   text-decoration: underline 5px #ff7a00;
   text-underline-offset: 25px;
 }
@@ -174,71 +179,133 @@ h4 {
   text-decoration: underline #ff7a00;
 }
 
+/* 
+  Styling the reference links and giving them an animation
+*/
 .reference-link {
   color: #ff8c42;
   -webkit-text-decoration: underline 1px #ff8c42;
   text-decoration: underline 1px #ff8c42;
+  /* 
+    Giving the underline an offset 
+    em is relative to the font size
+  */
   text-underline-offset: 0.35em;
+  /* 
+    This animates the text and underline color. There are
+    two transitions because one is for older browsers and the other
+    is for modern browsers.
+  */
   transition:
-    color 0.15s ease-in-out,
+    color 0.15s ease,
     -webkit-text-decoration 0.15s ease;
   transition:
-    color 0.15s ease-in-out,
-    text-decoration 0.15s ease;
-  transition:
-    color 0.15s ease-in-out,
+    color 0.15s ease,
     text-decoration 0.15s ease,
     -webkit-text-decoration 0.15s ease;
 }
 
+/* This styles the reference links on hover */
 .reference-link:hover {
   color: #ca4d00;
   -webkit-text-decoration: underline #ca4d00;
   text-decoration: underline #ca4d00;
 }
 
+/* Styling the paragraphs */
 p {
+  /* 
+    Changing to this font size because it is part 
+    of the web standards.
+  */
   font-size: 1.6rem;
   line-height: 1.5;
   color: #1b1b1b;
 }
+
+/* 
+  This makes all the hr elements be centered.
+*/
 hr {
-  border: none;
   border-bottom: 3px solid gray;
   width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* 
+  This styles the back to top button and makes it a 
+  circle that will stick on the person's screen once 
+  they scroll past a certain point.
+*/
 #back-to-top {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: fixed;
   bottom: 20px;
   right: 30px;
+  /* 
+    z-index gives the button more priority to be stacked
+    on top of other elements.
+  */
   z-index: 100;
+  /* 
+    This makes the button a square then we turn 
+    it into a circle using border-radius.
+  */
   width: 45px;
   height: 45px;
+
   border: none;
+  /* 
+    I used this light grey because it looks good on all the
+    backgrounds in the website.
+  */
   background-color: rgb(164, 164, 164);
   color: white;
+  /* 
+    cursor pointer ensures that if a mouse is hovering 
+    over it, the cursor changes to a pointer which 
+    will tell the user they can click on it. 
+  */
   cursor: pointer;
   padding: 15px;
+  /* This gives the square a circular shape */
   border-radius: 100px;
+  /* 
+    Making the button unable to be interacted with 
+    at the beginning of the page until the user
+    reaches some requirements.   
+  */
   pointer-events: none;
   opacity: 0;
 }
 
+/* Centering the image inside the button */
+#back-to-top img {
+  position: absolute;
+  width: 50%;
+  right: 25%;
+  top: 25%;
+  margin: 0 auto;
+}
+
+/* 
+  This makes the back to top button visible and 
+  clickable once its state is back to active. 
+*/
 #back-to-top.active {
   pointer-events: auto;
   opacity: 1;
 }
 
+/* This gives a stroke to the button once it is hovered on. */
 #back-to-top:hover {
   border: 1px solid #ff7a00;
 }
 
+/* 
+  This makes the footer a dark themed color and 
+  pushes the container downwards.
+*/
 footer {
   background-color: #272727;
   color: ghostwhite;
@@ -247,16 +314,19 @@ footer {
   margin-top: 48px;
 }
 
+/* This styles the footer navigation and removes the background. */
 footer nav {
   margin-top: 20px;
   background: transparent;
   padding: 8px;
 }
 
+/* 
+  This styles the navigation links in the footer.
+  The links have a lighter font weight.
+*/
 footer nav a {
   font-weight: 100;
-  transition: none !important;
-  animation: none !important;
 }
 
 footer ul {
@@ -267,7 +337,13 @@ footer ul {
   padding: 0;
 }
 
+/* 
+  This styles the hr that separates the legal 
+  information from the socials. 
+*/
 footer hr {
+  /* vw is viewport width. This makes the hr take up 
+  the entire width of the viewport. */
   width: 100vw;
   border-color: #737373;
   margin: 16px;
@@ -279,12 +355,23 @@ footer h4 {
   font-size: 40px;
 }
 
+/* This makes the footer content stack vertically */
 #footer-content {
   display: flex;
   flex-direction: column;
+  /* 
+    I use position relative to allow the legal information to 
+    go right to the bottom and position itself 
+    wherever it wants in the container.
+  */
   position: relative;
   padding: 16px;
 }
+
+/*
+  This styles the legal copyright information and
+  pushes it to the bottom of the footer. 
+*/
 #footer-legal-copyright {
   position: absolute;
   top: 100%;
