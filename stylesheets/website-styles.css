@@ -65,16 +65,23 @@ header {
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
     url(../images/volleyball-men-playing.avif);
   background-size: cover;
+  /* 
+    This pushs the image a bit lower so that we 
+    can see the athlete spiking better. 
+  */
   background-position: center 35%;
   padding-bottom: 150px;
   width: 100%;
   display: flex;
   flex-direction: column;
+  top: 0;
+  z-index: 100;
 }
 
 nav {
-  background-color: #171717;
+  background-color: #272727;
   padding: 8px;
+  top: 0;
 }
 
 ul {
@@ -207,9 +214,9 @@ h4 {
 
 /* This styles the reference links on hover */
 .reference-link:hover {
-  color: #ca4d00;
-  -webkit-text-decoration: underline #ca4d00;
-  text-decoration: underline #ca4d00;
+  color: #8f3700;
+  -webkit-text-decoration: underline #8f3700;
+  text-decoration: underline #8f3700;
 }
 
 /* Styling the paragraphs */
