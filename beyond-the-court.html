@@ -8,88 +8,138 @@
     <link rel="icon" type="image/png" href="images/white-volleyball.png" />
     <script src="scripts/back-to-top.js" defer></script>
     <style>
-      body {
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: bottom;
-      }
+      /* 
+        This makes the flex container move content 
+        in a column direction and align content to the center.
+      */
       #history-of-volleyball-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 30px;
+        margin: 40px;
       }
 
+      /* 
+        Here, I gave the paragraphs this width because I didn't want the 
+        paragraphs to be too skinny and I wanted it to be 
+        also the same width as the image below it.
+      */
       #history-of-volleyball-container p {
         margin: 16px;
         max-width: 700px;
       }
 
+      /* 
+        max-width: 100% makes the image take up
+        the whole width of the screen.
+      */
       #history-of-volleyball-container img {
         border-radius: 20px;
         margin: 16px;
         max-width: 100%;
-        height: auto;
-        flex-shrink: 1 500px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
       }
 
+      /* 
+        This styles the paragraph that has the id. 
+        It makes the words more spaced, the font-weight 
+        lighter and it has a background to seperate itself from the 
+        famous volleyball players and events divs.
+      */
+      #legendary-players-statement {
+        font-size: 20px;
+        word-spacing: 1.6px;
+        background-color: #ff8b3db2;
+        padding: 16px;
+        font-weight: 300;
+        border-radius: 8px;
+        margin: 16px;
+      }
+
+      /* 
+        This styles the section that has contains information about
+        famous volleyball athletes & events.
+      */
       #famous-volleyball-players-and-tournaments {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        flex-wrap: wrap;
       }
 
+      /* 
+        This styles the h4 that holds the name for the athlete/event
+        Giving it an orange underline to be consistent with styling.
+      */
       #famous-volleyball-players-and-tournaments h4 {
         margin-left: 20px;
         text-decoration: underline #ff7a00;
       }
 
+      /* 
+        This div contains the information for the athlete or event
+        The margins pushes the content closer together so there isn't
+        such a big gap between text and image.
+      */
       #famous-volleyball-players-and-tournaments div {
         margin: 16px;
         margin-right: 40px;
         margin-left: 40px;
       }
 
+      /* 
+        The max-width ensures that the paragraph
+        leaves space for the image.
+      */
       #famous-volleyball-players-and-tournaments p {
-        max-width: 700px;
-        width: 100%;
-        text-wrap: wrap;
+        max-width: 500px;
+        margin: 10px;
         margin-left: 20px;
+        margin-top: 10px;
       }
 
+      /* 
+        Making the refrence links go down to the bottom of the container
+        so that it won't look like its part of the paragraph
+        and its easier to click.
+      */
       #famous-volleyball-players-and-tournaments a {
         margin-left: 20px;
+        position: relative;
+        bottom: 100%;
       }
 
+      /* 
+        This styles the image that displays the famous
+        volleyball player and/or tournaments.
+
+        float right pushes the image to the right of the container
+        and it won't move away from there.
+        if paragraphs that are above to overlap the image
+        will wrap under the image
+
+        I used object-fit: cover to prevent stretching of images
+
+        The image has a shadow to pop up and look sleek and modern.
+      */
       #famous-volleyball-players-and-tournaments img {
         border-radius: 8px;
         float: right;
         width: 300px;
-        height: 300px;
         max-width: 100%;
         height: auto;
         object-fit: cover;
-        margin-left: 16px;
-        margin-right: 16px;
+        margin: 10px 0 16px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
       }
 
-      #legendary-players-statement {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 20px;
-        word-spacing: 1.6px;
-        color: #1b1b1b;
-        background-color: #ff8b3db2;
-        padding: 16px;
-        font-weight: 400;
-        border-radius: 8px;
-        margin: 16px;
-      }
+      /* 
+        When the screen reaches the width, the image in the 
+        famous-volleyball-players-and-tournaments div will stop
+        floating and will go above the paragraph.
 
-      @media (max-width: 612px) {
+        The h4 and the paragraph gets centered in the middle.
+      */
+      @media screen and (max-width: 612px) {
         #famous-volleyball-players-and-tournaments img {
           float: none;
           display: block;
@@ -108,6 +158,14 @@
         }
       }
 
+      /* 
+        This styles the beach volleyball section. 
+        The linear gradient is added to darken the image so that the 
+        content on top of it will still be easy to read.
+
+        background-size: cover ensures the image doesn't stretch and
+        background-position: center centers the image.
+      */
       #beach-volleyball-container {
         background-image:
           linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -124,6 +182,11 @@
         text-align: center;
       }
 
+      /* 
+        This makes the paragraph inside the container have a 
+        transparent background so that the text will still be easy 
+        to read with an image as a background on the container.
+      */
       #beach-volleyball-container p {
         color: ghostwhite;
         background-color: #9b9b9b6f;
@@ -131,35 +194,149 @@
         margin-top: 16px;
       }
 
-      #haikyuu-section {
-        background-color: #1b1b1b;
-        padding: 80px 20px;
-        margin-top: 100px;
+      /* 
+        This styles the two images that seperate the regular 
+        volleyball information from the Haikyuu!! section.
+        
+        There is a Hinata image that floats and an orange
+        rectangle with a dragged vertex.
+      */
+      #haikyuu-section-divider {
+        /* 
+          absolute position takes the entire element off of the regular 
+          website positioning and it starts to behave 
+          like a sticker.
+        */
+        position: absolute;
+        /* 
+          Since the element can now be positioned anywhere, 
+          I push the element to 0% of the website left.
+        */
+        left: 0%;
+        height: 20%;
+        margin-top: 40px;
+      }
 
-        background-size: contain;
+      /* 
+        This styles the Hinata from Haikyuu!! image. The height keeps the
+        same porportions. The image gets pushed to the right.
+
+        I linked an animation that makes the image float up and down.
+        ease-in-out makes the up and down animation smooth because the
+        interpolation starts slow at the start, fast in the middle 
+        and slow and at the end. 
+      */
+      #hinata-flying-img {
+        position: relative;
+        width: 300px;
+        height: auto;
+        left: 25%;
+        animation: image-float 3s ease-in-out infinite alternate;
+      }
+
+      /* 
+        This animation starts the image at the bottom 
+        of the container then moves it 20 percent upwards.
+      */
+      @keyframes image-float {
+        from {
+          transform: translateY(0%);
+        }
+        to {
+          transform: translateY(-20%);
+        }
+      }
+
+      /* 
+        This styles the section that has everything about Haikyuu!!
+        The section is pushed away from the section divider to seperate
+        this area from the very important content.
+      */
+      #haikyuu-section {
+        background-color: #424242;
+        padding: 80px 20px;
+        margin-top: 600px;
         /* 
           vw is Viewport Width. It measures the total width of the screen
           instead of the body width.
         */
         width: 100vw;
+
+        /* 
+          Position relative positions the element relative to itself
+
+          Here, we are trying to center the section. The reason why the 
+          section is so off the screen before adding this code is because it's 
+          size changed from the anchorpoint while the 
+          section was already centered causing it to go more to the right.
+        */
         position: relative;
+        /* 
+          This chunk of code tells the browser to push the element to the right 
+          by 50% of the parent container's width then translateX(-50%) moves 
+          the element backwards to the left by 
+          50% of its own width.
+        */
         left: 50%;
         transform: translateX(-50%);
-        margin-top: 600px;
       }
 
+      /* 
+        This creates a pseudo-element not class that takes up the
+        entire size of the section.
+        I give it a z-index of -1 so that it won't go 
+        over all the content that needs to be read.
+      */
+      #haikyuu-section::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        /* 
+          This makes the gradient move from left to right and 
+          the middle will be more transparent to look lighter.
+        */
+        background: linear-gradient(
+          to right,
+          #1b1b1b 0%,
+          #1c1c1c00 35%,
+          #1b1b1b00 35%,
+          #1b1b1b 100%
+        );
+      }
+
+      /* 
+        This styles the container that holds the 
+        grid container and the iframe. 
+        
+        There is a max-width so that there can be null space. The container gets 
+        centered using margin 0 auto and there is a large 
+        gap for each element.
+      */
       #haikyuu-container {
-        max-width: 900px;
+        max-width: 90%;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        gap: 48px;
+        gap: 32px;
         justify-content: center;
       }
 
       #haikyuu-container iframe {
         width: 100%;
       }
+
+      /* 
+        This styles the h3 giving it an orange border 
+        at I make all the text uppercase. I also remove the 
+        underlines from the heading because theres going 
+        to be one big bottom border and that would 
+        be too much orange.
+      */
       #haikyuu-container h3 {
         text-align: center;
         border-bottom: 3px solid #ff7a00;
@@ -177,50 +354,47 @@
         color: ghostwhite;
       }
 
-      #haikyuu-section img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        position: absolute;
-        bottom: 0%;
-        left: 0;
-        z-index: -2;
-      }
+      /* 
+        This makes the container that holds the two cards a
+        grid so that if one card grows larger, the other
+        one will grow with it and become the same height/width.
 
-      #haikyuu-section::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
+        repeat() makes it so that the math for the grid continues 
+        over and over instead of manually creating 
+        the columns and rows.
 
-        background: linear-gradient(
-          to right,
-          #1b1b1b 0%,
-          rgba(27, 27, 27, 0) 35%,
-          rgba(27, 27, 27, 0) 35%,
-          #1b1b1b 100%
-        );
-      }
-
+        I used minmax() to make it so that the width has to be at least
+        280px and an equal fraction at most. 
+      */
       #haikyuu-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 24px;
       }
 
+      /* 
+        This styles the Haikyuu card and gives alot of
+        padding to keep the text away from the edges.
+
+        The border strokes are added to seperate the content background 
+        from the section background.
+      */
       .haikyuu-card {
         background-color: #242424;
         border-left: 4px solid #ff7a00;
+        border-right: 4px solid #ff7a00;
         padding: 28px;
         border-radius: 4px;
       }
 
       .haikyuu-card h4 {
         color: ghostwhite;
-        margin: 0 0 12px 0;
+        margin-bottom: 12px;
+        /* 
+          This makes the letters fully uppercase and the letters get 
+          spaced by 1px to make it more easy to read since 
+          all the letters are capitalized.
+        */
         text-transform: uppercase;
         letter-spacing: 1px;
       }
@@ -228,48 +402,24 @@
       .haikyuu-card p {
         color: #bdbdbd;
         line-height: 1.7;
-        margin: 0;
       }
 
+      /* 
+        This styles the quote dark themed since the entire 
+        section is dark themed. The font size is a bit bigger 
+        than the regular paragraph text and there is a 
+        larger line height to make reading easier.
+      */
       #haikyuu-quote {
         text-align: center;
         padding: 40px 32px;
         background-color: #242424;
         border-radius: 8px;
         color: ghostwhite;
-        font-size: 18px;
         font-style: italic;
+        font-size: 1.8rem;
         line-height: 1.8;
-        margin: 0 0 16px 0;
-      }
-
-      #haikyuu-section-divider {
-        position: absolute;
-        flex-direction: row;
-        left: 0%;
-        width: 40%;
-        width: 100vw;
-        height: 20%;
-        margin-top: 40px;
-      }
-
-      #hinata-flying-img {
-        justify-self: flex-end;
-        position: relative;
-        width: 300px;
-        height: auto;
-        left: 25%;
-        transform: translateY(60%);
-        animation: image-float 3s ease-in-out infinite alternate;
-      }
-
-      @keyframes image-float {
-        from {
-          transform: translateY(0%);
-        }
-        to {
-          transform: translateY(-20%);
-        }
+        margin-bottom: 16px;
       }
     </style>
   </head>
@@ -297,7 +447,18 @@
   </header>
 
   <main>
+    <!-- 
+      Creating a back to top button that will go the bottom right. 
+      
+      The # in the href makes the a tag link to the page the user is in.
+      Adding the arrow up image so that people can understand it brings them up.
+    -->
     <a id="back-to-top" href="#"><img src="images/arrow-up.png" /></a>
+
+    <!-- 
+      This section talks about the history of volleyball and how the idea came up.
+      It also explains how it was accepted into the Olympics.
+    -->
     <section>
       <div id="history-of-volleyball-container">
         <h3>History of Volleyball</h3>
@@ -347,10 +508,19 @@
           width="500px"
           height="auto"
           src="images/volleyball-paris-1956.webp"
+          alt="1956 Paris World champisionships indoor volleyball. Two men blocking the volleyball."
           loading="lazy" />
       </div>
     </section>
 
+    <!-- 
+      This section holds content that talks about the top 4 
+      famous players and tournaments.
+
+      There is a opening paragraph that talks about how volleyball 
+      has seen many legendary players and memorable tournaments and links to go 
+      learn about the people/events.
+    -->
     <section style="margin-top: 60px">
       <h3>Famous Players & Tournaments</h3>
 
@@ -369,6 +539,7 @@
             width="200px"
             height="200px"
             src="images/karch-kiraly.webp"
+            alt="Famous volleyball player Karch Kiraly. He mouth is open raising his voice, he has grey hair, glasses and a blue polo."
             loading="lazy" />
           <p>
             Widely regarded as one of the greatest volleyball players of all
@@ -396,6 +567,7 @@
             width="200px"
             height="200px"
             src="images/wilfredo-leon-volleyball-player.webp"
+            alt="Wilfredo León, a middle aged dark skin man holding a volleyball with both arms in a volleyball court facing camera."
             loading="lazy" />
           <p>
             Wilfredo León is a former Cuban professional volleyball player that
@@ -424,6 +596,7 @@
             width="200px"
             height="200px"
             src="images/tijana.webp"
+            alt="Tijana Bošković, a light skinned female looking away from the camera with both arms a bit up like they are in a shrugging position."
             loading="lazy" />
           <p>
             Tijana Bošković is a Serbian professional volleyball player who
@@ -443,6 +616,11 @@
         <hr />
         <div>
           <h4>4. The 2012 London Olympics</h4>
+          <!-- 
+            Making the paragraph take up the whole space this 
+            time since the tournment image is too big to 
+            be side-by-side 
+          -->
           <p style="max-width: 100%">
             This single match is widely regarded as one of the greatest
             volleyball matches in history. It was the gold medal match between
@@ -459,6 +637,10 @@
             sets and stole the gold medal.
           </p>
           <br />
+
+          <!-- 
+              Using inline styling because an ID doesn't work.
+          -->
           <img
             style="
               float: none;
@@ -470,6 +652,7 @@
               margin-bottom: 16px;
             "
             src="images/russian-volleyball-players-celebrating-after-comeback.avif"
+            alt="Volleyball players that represented Russia celebrating after making an amazing comeback in the 2012 London Olympics against Brazil. They are all smiling and are hugging eachother."
             loading="lazy" />
           <a
             style="display: block; margin: 0 auto; text-align: center"
@@ -482,6 +665,10 @@
       </div>
     </section>
 
+    <!-- 
+      This section holds basic information about beach 
+      volleyball like the rules and origin. The section is an image.
+    -->
     <section id="beach-volleyball-container">
       <div>
         <h3>Beach Volleyball</h3>
@@ -500,17 +687,34 @@
       </div>
     </section>
 
+    <!-- 
+      This section seperates the Haikyuu!! section from 
+      the regular volleyball information.
+    -->
     <div id="haikyuu-section-divider">
-      <img width="40%" src="images/Section Divider.png" loading="lazy" />
+      <img
+        width="40%"
+        src="images/Section Divider.png"
+        alt="Section divider"
+        loading="lazy" />
       <img
         id="hinata-flying-img"
         width="239px"
         height="341px"
         src="images/hinata-flying-cropped-bgremoved.png"
+        alt="Hinata from Haikyuu!! anime looking like hes about to spike."
         loading="lazy" />
     </div>
+
+    <!-- 
+      This section talks about the main character in the anime, 
+      and how the characters inspire the viewers to pursure
+      things in life.
+
+      There is also a quote from Takeda and an iframe that has 
+      the trailer for season 1 of Haikyuu!!.
+    -->
     <section id="haikyuu-section">
-      <img src="images/hinata-and-kageyama-Cropped.avif" loading="lazy" />
       <div id="haikyuu-container">
         <h3>Haikyuu!!: The Anime That Connects</h3>
 
@@ -568,6 +772,14 @@
       </div>
     </section>
   </main>
+
+  <!-- 
+    This footer holds the links to Volleyball Canada's socials, 
+    nav navigation to the other webpages and 
+    copyright info.
+
+    I add a hr tag to seperate the navigation from the legal information.
+  -->
   <footer>
     <div id="footer-content">
       <h4>Volleyball</h4>
