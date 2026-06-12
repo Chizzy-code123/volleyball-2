@@ -45,12 +45,16 @@ body {
   overflow-x: hidden;
   font-size: 1.6rem;
 }
+#main-wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
 
 main {
   /* 
     I am using a liquid layout
   */
-  width: 90%;
+  width: 70%;
   max-width: 960px;
   margin: 0 auto;
 }
@@ -72,6 +76,8 @@ header {
   background-position: center 35%;
   padding-bottom: 150px;
   width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   top: 0;
@@ -79,12 +85,33 @@ header {
 }
 
 nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #272727;
   padding: 8px;
   top: 0;
+  position: sticky;
+  z-index: 100;
+  width: 100%;
+  margin: 0 auto;
 }
 
+/* 
+  This keeps the volleyball image a circle and it gets pushed 
+  to the right. I would have made the icon a bit bigger and 
+  reduced the size when the user scrolls past the header 
+  and added a volleyball heading in the nav but I 
+  don't know js yet. 
+*/
+nav img {
+  max-width: 48px;
+  display: inline;
+  aspect-ratio: 1/1;
+  margin-right: auto;
+}
 ul {
+  /* justify-self: flex-end; */
   display: flex;
   flex-direction: row;
   justify-content: right;
@@ -319,6 +346,8 @@ footer {
   text-align: center;
   padding: 30px 16px;
   margin-top: 48px;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 /* This styles the footer navigation and removes the background. */

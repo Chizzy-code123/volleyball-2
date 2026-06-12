@@ -6,6 +6,10 @@
     <title>Beyond the Court</title>
     <link rel="stylesheet" href="stylesheets/website-styles.css" />
     <link rel="icon" type="image/png" href="images/white-volleyball.png" />
+    <!-- 
+      This externally refrences the js script that 
+      handles the back to top button.
+    -->
     <script src="scripts/back-to-top.js" defer></script>
     <style>
       /* 
@@ -27,7 +31,6 @@
       */
       #history-of-volleyball-container p {
         margin: 16px;
-        max-width: 700px;
       }
 
       /* 
@@ -124,8 +127,9 @@
       #famous-volleyball-players-and-tournaments img {
         border-radius: 8px;
         float: right;
-        width: 300px;
-        max-width: 100%;
+        width: 100%;
+        max-width: 200px;
+        aspect-ratio: 1/1;
         height: auto;
         object-fit: cover;
         margin: 10px 0 16px;
@@ -229,7 +233,8 @@
       */
       #hinata-flying-img {
         position: relative;
-        width: 300px;
+        width: 100%;
+        max-width: 300px;
         height: auto;
         left: 25%;
         animation: image-float 3s ease-in-out infinite alternate;
@@ -427,400 +432,404 @@
 
   <body>
     <!-- 
-      Famous Players & Tournaments
-      Purpose: Showcase the competitive side of the sport.
-      Include:
-      Notable players such as Karch Kiraly and Wilfredo León
-      Major tournaments like the Olympic Games Volleyball Tournament and FIVB Volleyball Men's World Championship
-      Records and achievements
-      Recent champions
+      Taking the nav out of the header because we want it 
+      to stick to the top so that the user can access 
+      both pages from anywhere on the webpage.
     -->
-  </body>
-  <header>
     <nav>
+      <img src="images/volleyball-ball-256.png" alt="White volleyball" />
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="beyond-the-court.html">Beyond The Court</a></li>
       </ul>
     </nav>
-    <h1>Volleyball</h1>
-    <h2>Going Beyond the Court</h2>
-  </header>
-
-  <main>
-    <!-- 
-      Creating a back to top button that will go the bottom right. 
-      
-      The # in the href makes the a tag link to the page the user is in.
-      Adding the arrow up image so that people can understand it brings them up.
-    -->
-    <a id="back-to-top" href="#"><img src="images/arrow-up.png" /></a>
+    <header>
+      <h1>Volleyball</h1>
+      <h2>Going Beyond the Court</h2>
+    </header>
 
     <!-- 
-      This section talks about the history of volleyball and how the idea came up.
-      It also explains how it was accepted into the Olympics.
+      This div is for the fluid layout that I will be using for this website.
+      It will be making the width of the webpage 95% so that there will be 
+      a more responsive modern webpage layout.
     -->
-    <section>
-      <div id="history-of-volleyball-container">
-        <h3>History of Volleyball</h3>
-        <p>
-          Volleyball was invented in 1895 by William G. Morgan, a physical
-          director at the
-          <span style="font-weight: bold"
-            >Men's Christian Association (YMCA)</span
-          >
-          in Massachusetts. He wanted to create a new game that combined
-          elements of basketball, baseball, tennis, and handball. The original
-          name for the game was "Mintonette," but it was later changed to
-          "Volleyball" after a demonstration game where a player remarked that
-          the ball was volleying back and forth over the net.
-        </p>
-        <p>
-          The rules to play the game kept changing over the years like the
-          number of players and the amount of points to win a set but it was
-          finally standardized in 1947.
-        </p>
-        <p>
-          in 1947, representatives from 14 nations Belgium, Brazil,
-          Czechoslovakia, Egypt, France, the Netherlands, Hungary, Italy,
-          Poland, Portugal, Romania, Uruguay, the USA and Yugoslavia met in
-          Paris to form the Federation Internationale de Volleyball (FIVB).
-          "FIVB has become one of the largets sporting organizations in the
-          world with 222 afiliated bodies"
-          <a
-            class="reference-link"
-            href="https://www.olympics.com/en/news/what-history-volleyball-game-origin-mintonette-ymca-fivb-olympics"
-            target="_blank"
-            >Olympics</a
-          >
-        </p>
-        <p>
-          With an international governing body in place, volleyball's popularity
-          grew rapidly. In 1957, indoor volleyball was granted Olympic status by
-          the
-          <a
-            class="reference-link"
-            href="https://www.olympics.com/ioc"
-            target="_blank"
-            >International Olympic Committee (IOC)</a
-          >
-        </p>
-        <img
-          width="500px"
-          height="auto"
-          src="images/volleyball-paris-1956.webp"
-          alt="1956 Paris World champisionships indoor volleyball. Two men blocking the volleyball."
-          loading="lazy" />
-      </div>
-    </section>
+    <div id="main-wrapper">
+      <main>
+        <!-- 
+          Creating a back to top button that will go the bottom right. 
+          
+          The # in the href makes the a tag link to the page the user is in.
+          Adding the arrow up image so that people can understand it brings them up.
+        -->
+        <a id="back-to-top" href="#"><img src="images/arrow-up.png" /></a>
 
-    <!-- 
-      This section holds content that talks about the top 4 
-      famous players and tournaments.
-
-      There is a opening paragraph that talks about how volleyball 
-      has seen many legendary players and memorable tournaments and links to go 
-      learn about the people/events.
-    -->
-    <section style="margin-top: 60px">
-      <h3>Famous Players & Tournaments</h3>
-
-      <p id="legendary-players-statement">
-        Volleyball has seen many legendary players and memorable tournaments
-        throughout its history; some that has changed the game forever.
-        <br />
-        Here are some of the most notable players and tournaments in volleyball
-        history
-      </p>
-
-      <div id="famous-volleyball-players-and-tournaments">
-        <div>
-          <h4>1. Karch Kiraly</h4>
-          <img
-            width="200px"
-            height="200px"
-            src="images/karch-kiraly.webp"
-            alt="Famous volleyball player Karch Kiraly. He mouth is open raising his voice, he has grey hair, glasses and a blue polo."
-            loading="lazy" />
-          <p>
-            Widely regarded as one of the greatest volleyball players of all
-            time, Karch Kiarly is an American former professional volleyball
-            player and coach. He dominated indoor volleyball in the 1980s and
-            lead the US Men's National Team to back-to-back Olympic Gold medals
-            in 1984 and 1988. He later transitioned to becah volleyball and won
-            a gold medal. he is the only athlete to win Olympic gold in both
-            indoor and beach volleyball. After retiring from playing, Kiraly
-            went on to coach the US Women's Indoor team to their first Olympic
-            gold in 2021.
-          </p>
-          <br />
-          <a
-            class="reference-link"
-            href="https://usavolleyball.org/coach/karch-kiraly/"
-            target="_blank">
-            Click here to learn more about Karch Kiraly</a
-          >
-        </div>
-        <hr />
-        <div>
-          <h4>2. Wilfredo León</h4>
-          <img
-            width="200px"
-            height="200px"
-            src="images/wilfredo-leon-volleyball-player.webp"
-            alt="Wilfredo León, a middle aged dark skin man holding a volleyball with both arms in a volleyball court facing camera."
-            loading="lazy" />
-          <p>
-            Wilfredo León is a former Cuban professional volleyball player that
-            plays for Poland. He started playing volleyball before reaching his
-            teens and got debuted for the Cuban national team at the age of 14.
-            His position is outside hitter. Wilfredo is famous for his powerful
-            jump serves that average
-            <span style="font-weight: bold; text-decoration: underline"
-              >135km/h</span
-            >
-            and an impressive hitting point that allows him to spike over almost
-            any block in the world.
-          </p>
-          <br />
-          <a
-            class="reference-link"
-            href="images/wilfredo-leon-volleyball-player.webp"
-            target="_blank">
-            Click here to learn more about Wilfredo León</a
-          >
-        </div>
-        <hr />
-        <div>
-          <h4>3. Tijana Bošković</h4>
-          <img
-            width="200px"
-            height="200px"
-            src="images/tijana.webp"
-            alt="Tijana Bošković, a light skinned female looking away from the camera with both arms a bit up like they are in a shrugging position."
-            loading="lazy" />
-          <p>
-            Tijana Bošković is a Serbian professional volleyball player who
-            plays as a middle blocker. She is widely considered one of the best
-            female players in the world and has won numerous awards, including
-            the Best Player award at the 2016 Olympics. Bošković is known for
-            her powerful spikes and excellent blocking abilities.
-          </p>
-          <br />
-          <a
-            class="reference-link"
-            href="https://usavolleyball.org/player/tijana-boskovic/"
-            target="_blank">
-            Click here to learn more about Tijana Bošković</a
-          >
-        </div>
-        <hr />
-        <div>
-          <h4>4. The 2012 London Olympics</h4>
-          <!-- 
-            Making the paragraph take up the whole space this 
-            time since the tournment image is too big to 
-            be side-by-side 
-          -->
-          <p style="max-width: 100%">
-            This single match is widely regarded as one of the greatest
-            volleyball matches in history. It was the gold medal match between
-            Russia vs Brazil. Brazil was completely dominating the match. They
-            won the first two sets easily and were leading in the third set.
-            Russia was completely overwhelmed, and their offense was falling
-            apart against Brazil's defense. Desperate, Russia's coach made the
-            the bold desicion to sub his giant 7'2 middle blocker Dmitry
-            Muserskiy and move him out of his normal position to play as an
-            oppisite hitter. <br />
-            Middle blockers almost never play as a primary attacker so Brazil
-            had no idea on how to defend against him. Muserskiy went on to score
-            31 points and Russia flipped the match around, winning the next 3
-            sets and stole the gold medal.
-          </p>
-          <br />
-
-          <!-- 
-              Using inline styling because an ID doesn't work.
-          -->
-          <img
-            style="
-              float: none;
-              height: auto;
-              width: 600px;
-              object-fit: cover;
-              display: block;
-              margin: 0 auto;
-              margin-bottom: 16px;
-            "
-            src="images/russian-volleyball-players-celebrating-after-comeback.avif"
-            alt="Volleyball players that represented Russia celebrating after making an amazing comeback in the 2012 London Olympics against Brazil. They are all smiling and are hugging eachother."
-            loading="lazy" />
-          <a
-            style="display: block; margin: 0 auto; text-align: center"
-            class="reference-link"
-            href="https://www.olympics.com/en/news/russia-stun-brazil-for-volleyball-gold-london-2012-volleyball"
-            target="_blank">
-            Click here to learn more about the 2012 London Olympics</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- 
-      This section holds basic information about beach 
-      volleyball like the rules and origin. The section is an image.
-    -->
-    <section id="beach-volleyball-container">
-      <div>
-        <h3>Beach Volleyball</h3>
-        <p>
-          Beach volleyball is a popular variant of indoor volleyball. Born on
-          the sunny shores of Santa Monica, California, in the 1920s, the beach
-          game strips the sport down to its absolute essentials: just two
-          players per side covering a sand court that is only slightly smaller
-          than an indoor one.<br />
-          The volleyball is differernt from the indoor one as it is slightly
-          larger and lighter to make it easier to control in the wind. The rules
-          are also slightly different, with matches being played as
-          best-of-three sets, and the first two sets played to 21 points instead
-          of 25. The final set is played to 15 points.
-        </p>
-      </div>
-    </section>
-
-    <!-- 
-      This section seperates the Haikyuu!! section from 
-      the regular volleyball information.
-    -->
-    <div id="haikyuu-section-divider">
-      <img
-        width="40%"
-        src="images/Section Divider.png"
-        alt="Section divider"
-        loading="lazy" />
-      <img
-        id="hinata-flying-img"
-        width="239px"
-        height="341px"
-        src="images/hinata-flying-cropped-bgremoved.png"
-        alt="Hinata from Haikyuu!! anime looking like hes about to spike."
-        loading="lazy" />
-    </div>
-
-    <!-- 
-      This section talks about the main character in the anime, 
-      and how the characters inspire the viewers to pursure
-      things in life.
-
-      There is also a quote from Takeda and an iframe that has 
-      the trailer for season 1 of Haikyuu!!.
-    -->
-    <section id="haikyuu-section">
-      <div id="haikyuu-container">
-        <h3>Haikyuu!!: The Anime That Connects</h3>
-
-        <div id="haikyuu-grid">
-          <div class="haikyuu-card">
-            <h4>How It Inspires People to Play Volleyball</h4>
+        <!-- 
+          This section talks about the history of volleyball and how the idea came up.
+          It also explains how it was accepted into the Olympics.
+        -->
+        <section>
+          <div id="history-of-volleyball-container">
+            <h3>History of Volleyball</h3>
             <p>
-              Shoyo, a 15-year old passionate volleyball player wants to become
-              like the Little Giant. The problem is, hes short, not very skilled
-              and isn't the smartest, but what he does have keeps him going. He
-              has his amazing jumps and his determination. He continues to grow
-              throughout the anime and proves to viewers that you need to push
-              past the walls in your way.
+              Volleyball was invented in 1895 by William G. Morgan, a physical
+              director at the
+              <span style="font-weight: bold"
+                >Men's Christian Association (YMCA)</span
+              >
+              in Massachusetts. He wanted to create a new game that combined
+              elements of basketball, baseball, tennis, and handball. The
+              original name for the game was "Mintonette," but it was later
+              changed to "Volleyball" after a demonstration game where a player
+              remarked that the ball was volleying back and forth over the net.
             </p>
-          </div>
-
-          <div class="haikyuu-card">
-            <h4>Character Development</h4>
             <p>
-              From Hinata's relentless determination to Kageyama's growth from a
-              lone genius to a true teammate, every character in Haikyuu!!
-              evolves through failure, rivalry, and perseverance mirroring the
-              real journey of any athlete while carrying the viewer along the
-              ride.
+              The rules to play the game kept changing over the years like the
+              number of players and the amount of points to win a set but it was
+              finally standardized in 1947.
             </p>
-          </div>
-        </div>
-
-        <p id="haikyuu-quote">
-          "The last ones standing are the winners. No matter how many times you
-          get knocked down, keep getting back up."
-          <br />
-          <span style="color: #ff7a00; font-size: 16px; letter-spacing: 1px"
-            >— Ittetsu Takeda, Haikyuu!!</span
-          >
-        </p>
-        <h4>Watch the Trailer!</h4>
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/JOGp2c7-cKc?si=Vdg6m8lShmprSt7l"
-          title="YouTube video player"
-          frameborder="0"
-          allow="
-            accelerometer;
-            autoplay;
-            clipboard-write;
-            encrypted-media;
-            gyroscope;
-            picture-in-picture;
-            web-share;
-          "
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen></iframe>
-      </div>
-    </section>
-  </main>
-
-  <!-- 
-    This footer holds the links to Volleyball Canada's socials, 
-    nav navigation to the other webpages and 
-    copyright info.
-
-    I add a hr tag to seperate the navigation from the legal information.
-  -->
-  <footer>
-    <div id="footer-content">
-      <h4>Volleyball</h4>
-      <ul>
-        <li>
-          <a href="https://www.instagram.com/volleyball/">
+            <p>
+              in 1947, representatives from 14 nations Belgium, Brazil,
+              Czechoslovakia, Egypt, France, the Netherlands, Hungary, Italy,
+              Poland, Portugal, Romania, Uruguay, the USA and Yugoslavia met in
+              Paris to form the Federation Internationale de Volleyball (FIVB).
+              "FIVB has become one of the largest sporting organizations in the
+              world with 222 affiliated bodies"
+              <a
+                class="reference-link"
+                href="https://www.olympics.com/en/news/what-history-volleyball-game-origin-mintonette-ymca-fivb-olympics"
+                target="_blank"
+                >Olympics</a
+              >
+            </p>
+            <p>
+              With an international governing body in place, volleyball's
+              popularity grew rapidly. In 1957, indoor volleyball was granted
+              Olympic status by the
+              <a
+                class="reference-link"
+                href="https://www.olympics.com/ioc"
+                target="_blank"
+                >International Olympic Committee (IOC)</a
+              >
+            </p>
             <img
-              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f14845cf1c931e2_DIMENSIONS_Social_Instagram.svg"
-              alt="Instagram"
+              width="500px"
+              height="auto"
+              src="images/volleyball-paris-1956.webp"
+              alt="1956 Paris World championships indoor volleyball. Two men blocking the volleyball."
               loading="lazy" />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/volleyball/">
-            <img
-              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434d86ae4be2b1b05e79_DIMENSIONS_Social_Facebook.svg"
-              alt=""
-              loading="lazy"
-          /></a>
-        </li>
-        <li>
-          <a href="https://twitter.com/volleyball">
-            <img
-              src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f1484082cc931e4_DIMENSIONS_Social_Twitter.svg"
-              alt=""
-              loading="lazy"
-          /></a>
-        </li>
-      </ul>
-      <hr />
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="beyond-the-court.html">Beyond The Court</a></li>
-        </ul>
-      </nav>
-      <hr />
-      <div id="footer-legal-copyright">
-        &copy; Chizzy Nwankwo 2026. All rights reserved.
-      </div>
+          </div>
+        </section>
+
+        <!-- 
+          This section holds content that talks about the top 4 
+          famous players and tournaments.
+    
+          There is a opening paragraph that talks about how volleyball 
+          has seen many legendary players and memorable tournaments and links to go 
+          learn about the people/events.
+        -->
+        <section style="margin-top: 60px">
+          <h3>Famous Players & Tournaments</h3>
+
+          <p id="legendary-players-statement">
+            Volleyball has seen many legendary players and memorable tournaments
+            throughout its history; some that has changed the game forever.
+            <br />
+            Here are some of the most notable players and tournaments in
+            volleyball history
+          </p>
+
+          <div id="famous-volleyball-players-and-tournaments">
+            <div>
+              <h4>1. Karch Kiraly</h4>
+              <img
+                width="200px"
+                height="200px"
+                src="images/karch-kiraly.webp"
+                alt="Famous volleyball player Karch Kiraly. He mouth is open raising his voice, he has grey hair, glasses and a blue polo."
+                loading="lazy" />
+              <p>
+                Widely regarded as one of the greatest volleyball players of all
+                time, Karch Kiarly is an American former professional volleyball
+                player and coach. He dominated indoor volleyball in the 1980s
+                and lead the US Men's National Team to back-to-back Olympic Gold
+                medals in 1984 and 1988. He later transitioned to beach
+                volleyball and won a gold medal. he is the only athlete to win
+                Olympic gold in both indoor and beach volleyball. After retiring
+                from playing, Kiraly went on to coach the US Women's Indoor team
+                to their first Olympic gold in 2021.
+              </p>
+              <br />
+              <a
+                class="reference-link"
+                href="https://usavolleyball.org/coach/karch-kiraly/"
+                target="_blank">
+                Click here to learn more about Karch Kiraly</a
+              >
+            </div>
+            <hr />
+            <div>
+              <h4>2. Wilfredo León</h4>
+              <img
+                width="200px"
+                height="200px"
+                src="images/wilfredo-leon-volleyball-player.webp"
+                alt="Wilfredo León, a middle aged dark skin man holding a volleyball with both arms in a volleyball court facing camera."
+                loading="lazy" />
+              <p>
+                Wilfredo León is a former Cuban professional volleyball player
+                that plays for Poland. He started playing volleyball before
+                reaching his teens and he debuted for the Cuban national team at
+                the age of 14. His position is outside hitter. Wilfredo is
+                famous for his powerful jump serves that average
+                <span style="font-weight: bold; text-decoration: underline"
+                  >135km/h</span
+                >
+                and an impressive hitting point that allows him to spike over
+                almost any block in the world.
+              </p>
+              <br />
+              <a
+                class="reference-link"
+                href="https://en.wikipedia.org/wiki/Wilfredo_Le%C3%B3n"
+                target="_blank">
+                Click here to learn more about Wilfredo León</a
+              >
+            </div>
+            <hr />
+            <div>
+              <h4>3. Tijana Bošković</h4>
+              <img
+                width="200px"
+                height="200px"
+                src="images/tijana.webp"
+                alt="Tijana Bošković, a light skinned female looking away from the camera with both arms a bit up like they are in a shrugging position."
+                loading="lazy" />
+              <p>
+                Tijana Bošković is a Serbian professional volleyball player who
+                plays as a middle blocker. She is widely considered one of the
+                best female players in the world and has won numerous awards,
+                including the Best Player award at the 2016 Olympics. Bošković
+                is known for her powerful spikes and excellent blocking
+                abilities.
+              </p>
+              <br />
+              <a
+                class="reference-link"
+                href="https://usavolleyball.org/player/tijana-boskovic/"
+                target="_blank">
+                Click here to learn more about Tijana Bošković</a
+              >
+            </div>
+            <hr />
+            <div>
+              <h4>4. The 2012 London Olympics</h4>
+              <!-- 
+                Making the paragraph take up the whole space this 
+                time since the tournament image is too big to 
+                be side-by-side 
+              -->
+              <p style="max-width: 100%">
+                This single match is widely regarded as one of the greatest
+                volleyball matches in history. It was the gold medal match
+                between Russia vs Brazil. Brazil was completely dominating the
+                match. They won the first two sets easily and were leading in
+                the third set. Russia was completely overwhelmed, and their
+                offense was falling apart against Brazil's defense. Desperate,
+                Russia's coach made the the bold decision to sub his giant 7'2
+                middle blocker Dmitry Muserskiy and move him out of his normal
+                position to play as an opposite hitter. <br />
+                Middle blockers almost never play as a primary attacker so
+                Brazil had no idea on how to defend against him. Muserskiy went
+                on to score 31 points and Russia flipped the match around,
+                winning the next 3 sets and stole the gold medal.
+              </p>
+              <br />
+
+              <img
+                style="
+                  float: none;
+                  height: auto;
+                  max-width: 600px;
+                  aspect-ratio: auto;
+                  object-fit: cover;
+                  display: block;
+                  margin: 0 auto;
+                  margin-bottom: 16px;
+                "
+                src="images/russian-volleyball-players-celebrating-after-comeback.avif"
+                alt="Volleyball players that represented Russia celebrating after making an amazing comeback in the 2012 London Olympics against Brazil. They are all smiling and are hugging eachother."
+                loading="lazy" />
+              <a
+                style="display: block; margin: 0 auto; text-align: center"
+                class="reference-link"
+                href="https://www.olympics.com/en/news/russia-stun-brazil-for-volleyball-gold-london-2012-volleyball"
+                target="_blank">
+                Click here to learn more about the 2012 London Olympics</a
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- 
+          This section holds basic information about beach 
+          volleyball like the rules and origin. The section is an image.
+        -->
+        <section id="beach-volleyball-container">
+          <div>
+            <h3>Beach Volleyball</h3>
+            <p>
+              Beach volleyball is a popular variant of indoor volleyball. Born
+              on the sunny shores of Santa Monica, California, in the 1920s, the
+              beach game strips the sport down to its absolute essentials: just
+              two players per side covering a sand court that is only slightly
+              smaller than an indoor one.<br />
+              The volleyball is differernt from the indoor one as it is slightly
+              larger and lighter to make it easier to control in the wind. The
+              rules are also slightly different, with matches being played as
+              best-of-three sets, and the first two sets played to 21 points
+              instead of 25. The final set is played to 15 points.
+            </p>
+          </div>
+        </section>
+
+        <!-- 
+          This section seperates the Haikyuu!! section from 
+          the regular volleyball information.
+        -->
+        <div id="haikyuu-section-divider">
+          <img
+            width="40%"
+            src="images/Section Divider.png"
+            alt="Section divider"
+            loading="lazy" />
+          <img
+            id="hinata-flying-img"
+            width="239px"
+            height="341px"
+            src="images/hinata-flying-cropped-bgremoved.png"
+            alt="Hinata from Haikyuu!! anime looking like hes about to spike."
+            loading="lazy" />
+        </div>
+
+        <!-- 
+          This section talks about the main character in the anime, 
+          and how the characters inspire the viewers to pursure
+          things in life.
+    
+          There is also a quote from Takeda and an iframe that has 
+          the trailer for season 1 of Haikyuu!!.
+        -->
+        <section id="haikyuu-section">
+          <div id="haikyuu-container">
+            <h3>Haikyuu!!: The Anime That Connects</h3>
+
+            <div id="haikyuu-grid">
+              <div class="haikyuu-card">
+                <h4>How It Inspires People to Play Volleyball</h4>
+                <p>
+                  Shoyo, a 15-year old passionate volleyball player wants to
+                  become like the Little Giant. The problem is, hes short, not
+                  very skilled and isn't the smartest, but what he does have
+                  keeps him going. He has his amazing jumps and his
+                  determination. He continues to grow throughout the anime and
+                  proves to viewers that you need to push past the walls in your
+                  way.
+                </p>
+              </div>
+
+              <div class="haikyuu-card">
+                <h4>Character Development</h4>
+                <p>
+                  From Hinata's relentless determination to Kageyama's growth
+                  from a lone genius to a true teammate, every character in
+                  Haikyuu!! evolves through failure, rivalry, and perseverance
+                  mirroring the real journey of any athlete while carrying the
+                  viewer along the ride.
+                </p>
+              </div>
+            </div>
+
+            <p id="haikyuu-quote">
+              "The last ones standing are the winners. No matter how many times
+              you get knocked down, keep getting back up."
+              <br />
+              <span style="color: #ff7a00; font-size: 16px; letter-spacing: 1px"
+                >— Ittetsu Takeda, Haikyuu!!</span
+              >
+            </p>
+            <h4>Watch the Trailer!</h4>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/JOGp2c7-cKc?si=Vdg6m8lShmprSt7l"
+              title="YouTube video player"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+          </div>
+        </section>
+      </main>
     </div>
-  </footer>
+
+    <!-- 
+      This footer holds the links to Volleyball Canada's socials, 
+      nav navigation to the other webpages and 
+      copyright info.
+  
+      I add a hr tag to seperate the navigation from the legal information.
+    -->
+    <footer>
+      <div id="footer-content">
+        <h4>Volleyball</h4>
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/volleyball/">
+              <img
+                src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f14845cf1c931e2_DIMENSIONS_Social_Instagram.svg"
+                alt="Instagram"
+                loading="lazy" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/volleyball/">
+              <img
+                src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434d86ae4be2b1b05e79_DIMENSIONS_Social_Facebook.svg"
+                alt=""
+                loading="lazy"
+            /></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/volleyball">
+              <img
+                src="https://cdn.prod.website-files.com/5b37b8e3f23df3a4846e507e/5b4e434e7f1484082cc931e4_DIMENSIONS_Social_Twitter.svg"
+                alt=""
+                loading="lazy"
+            /></a>
+          </li>
+        </ul>
+        <hr />
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="beyond-the-court.html">Beyond The Court</a></li>
+          </ul>
+        </nav>
+        <hr />
+        <div id="footer-legal-copyright">
+          &copy; Chizzy Nwankwo 2026. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

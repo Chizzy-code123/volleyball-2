@@ -3,7 +3,7 @@
   Course: Web Development II
   Teacher: Mr. Hardman
   School: Pembina Trails Collegiate
-  Date Last Modified: June 10 2026
+  Date Last Modified: June 11 2026
 -->
 <!doctype html>
 <html lang="en">
@@ -13,6 +13,10 @@
     <title>Volleyball</title>
     <link rel="icon" type="image/png" href="images/white-volleyball.png" />
     <link rel="stylesheet" href="stylesheets/website-styles.css" />
+    <!-- 
+      This externally refrences the js script that 
+      handles the back to top button.
+    -->
     <script src="scripts/back-to-top.js" defer></script>
 
     <style>
@@ -46,12 +50,9 @@
       }
 
       /*
-        This styles the paragraphs in the container. I set the width as 700 because
-        I wanted it to fit perfectly on a mobile device since this is an
-        information website mostly.
+        This styles the paragraphs in the container. 
       */
       #what-is-volleyball-container p {
-        max-width: 700px;
         padding: 16px;
       }
 
@@ -92,11 +93,11 @@
         GIFs that show the volleyball skills.
 
         I give the grid a large gap to create space between the GIFs so that the person
+        can have some breathing space between the continuous moving images.
       */
       #skills-gallery-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
         gap: 48px;
         margin-top: 16px;
         margin: 16px;
@@ -127,10 +128,8 @@
       #skills-container h3 {
         color: #f8f8ff;
       }
-      /*
-        This styles the h4 and the paragraph elements within the skills container.
-        I'm making the text color
-      */
+
+      /* This gives both the h4 and paragraph the same styling. */
       #skills-container h4,
       #skills-container p {
         color: ghostwhite;
@@ -198,9 +197,10 @@
       #core-rules {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        grid-template-rows: repeat(auto-fill, 500px);
+        grid-auto-rows: 1fr;
         margin-top: 20px;
         gap: 16px;
+        margin: 20 0;
       }
 
       /*
@@ -220,7 +220,6 @@
         align-items: center;
         justify-content: center;
         background-color: #ffa200;
-        padding: 8px;
         box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
         border-radius: 8px;
       }
@@ -230,7 +229,6 @@
         from the top of the card and the top of the texts.
       */
       .core-rule-card h4 {
-        text-align: center;
         font-size: 20px;
         margin: 8px;
       }
@@ -239,6 +237,11 @@
       */
       .core-rule-card img {
         margin: 16px;
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
       }
 
       /*
@@ -263,6 +266,8 @@
       */
       #volleyball-positions-container {
         display: grid;
+        margin: 16px;
+        justify-content: center;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         gap: 16px;
@@ -324,8 +329,11 @@
           container while maintaining its aspect ratio.
       */
       .position-content img {
-        width: 150px;
-        height: 150px;
+        width: 100%;
+        max-width: 150px;
+        /* This forces the image to be a square. */
+        aspect-ratio: 1/1;
+        border-radius: 8px;
         object-fit: cover;
       }
 
@@ -334,7 +342,6 @@
         Making the width 50% to leave the other 50% for the image.
       */
       .position-content p {
-        width: 50%;
         color: ghostwhite;
       }
 
@@ -344,7 +351,7 @@
         Now I want the paragraph to take up the full width because the image
         will now move to the bottom.
       */
-      @media (max-width: 818px) {
+      @media (max-width: 1048px) {
         .position-content {
           flex-direction: column;
           text-align: center;
@@ -357,325 +364,342 @@
     </style>
   </head>
   <body>
+    <!-- 
+      Taking the nav out of the header because we want it 
+      to stick to the top so that the user can access 
+      both pages from anywhere on the webpage.
+    -->
+    <nav>
+      <img src="images/volleyball-ball-256.png" alt="White volleyball" />
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="beyond-the-court.html">Beyond The Court</a></li>
+      </ul>
+    </nav>
     <header>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="beyond-the-court.html">Beyond The Court</a></li>
-        </ul>
-      </nav>
       <h1>Volleyball</h1>
       <h2>An Introduction to The Sport.</h2>
     </header>
-    <main>
-      <!-- 
-        Creating a back to top button that will go the bottom right. 
-        
-        The # in the href makes the a tag link to the page the user is in.
-        Adding the arrow up image so that people can understand it brings them up.
-      -->
-      <a id="back-to-top" href="#"
-        ><img src="images/arrow-up.png" alt="Arrow up button image."
-      /></a>
 
-      <!-- 
-        This is the beginning quote for the volleyball webpage.
-        
-        I use a span to refrence the person that gave the quote because
-        it is easier and better than using a blockquote and cite tag.
-      -->
-      <p id="beginning-quote">
-        "You're either getting better or getting worse. I don't think you stay
-        the same in sports. If we want to achieve something special in the game,
-        then those players have to recognize that they're responsible every day
-        for getting better."
-        <br />
-        <span style="font-weight: bold; font-style: italic">-Russ Rose</span>
-      </p>
-
-      <!-- 
-        This section explains what volleyball is and 
-        the simple rules that someone that wants 
-        to watch will want to know.
-      -->
-      <section>
-        <div id="what-is-volleyball-container">
-          <h3>What is Volleyball?</h3>
-          <p>
-            Volleyball is a team sport where two teams divided by a net compete
-            to try to score points by hitting a ball over the net to make it
-            land on the other team's side of the court. Each team typically has
-            6 players on the court at once. There are different versions
-            available for specific circumstances in order to offer the
-            versatility of the game to everyone.
-          </p>
-          <p>
-            A team can touch a volleyball a maximum of three times before it
-            must go over the net. The usual sequence is the dig where a person
-            bumps the ball to pass it, a set, the setter passes to someone able
-            to spike and then the spike where a person slams the ball over the
-            net onto the opponents side of the court.
-          </p>
-
-          <!-- 
-            loading lazy makes the image load when the
-            user scrolls onto the image
-          -->
-          <img
-            width="500"
-            height="350"
-            src="images/woman-bumping-ball.jpg"
-            alt=""
-            loading="lazy" />
-        </div>
-      </section>
-
-      <!-- 
-        This container holds an explanation for the main skills used in volleyball.
-
-        I found it easier and more organzied to just
-        give the divs that explained skills to have a class.
-
-        Each one has a h4 for typography hierachy.
-      -->
-      <section id="skills-container">
-        <h3>Skills and Techniques</h3>
-        <div>
-          <div class="fundamental-skill">
-            <h4>Serving</h4>
-            <p>
-              Serving is the act of putting the ball into play. There are
-              various types of serves, including underhand, overhand, and jump
-              serves.<br />
-              To serve the ball, you go behind the out of bounds line and hit
-              the ball with your hand to send it over the net.
-            </p>
-          </div>
-          <div class="fundamental-skill">
-            <h4>Bumping</h4>
-            <p>
-              Bumping (also known as forearm pass) is used to pass the ball to a
-              teammate. Its typically the first touch. It involves using the
-              forearms to create a platform for the ball to bounce off of. There
-              are many ways to bump a ball but its important that you use both
-              arms most of the time to maintain accuracy and strength.
-            </p>
-          </div>
-          <div class="fundamental-skill">
-            <h4>Setting</h4>
-            <p>
-              Setting is the act of preparing the ball for an attack. The setter
-              touches the ball after the bump and before the spike, aiming to
-              deliver a precise ball to the spiker. <br />
-              To set a ball, position yourself under the volleyball, create a
-              triangle with your hands and use your legs to push upwards.
-            </p>
-          </div>
-          <div class="fundamental-skill">
-            <h4>Blocking</h4>
-            <p>
-              Blocking is a defensive skill that people in the front row use to
-              prevent the ball from going over the net.<br />
-              To block effectively, you must time your jump to meet the ball at
-              its highest point and use your hands to create a solid barrier.
-            </p>
-          </div>
-          <div class="fundamental-skill">
-            <h4>Spiking</h4>
-            <p>
-              Spiking is the act of attacking the ball with force, aiming to
-              score points by slamming the ball down into the opponent's court.
-              A successful spike requires timing, power, and precision.<br />
-              To spike a ball, approach the net with speed, jump off both feet,
-              and swing your arm to hit the ball at its highest point.
-            </p>
-          </div>
-        </div>
+    <!-- 
+      This div is for the fluid layout that I will be using for this website.
+      It will be making the width of the webpage 95% so that there will be 
+      a more responsive modern webpage layout.
+    -->
+    <div id="main-wrapper">
+      <main>
         <!-- 
-          This is going to hold a grid that shows GIFs of the different
-          skills and techniques.
-
-          Each GIF is wrapped in a figure because I want the
-          name of the skill to be easily under the image using a figcaption.
-
-          Do images with a caption need an alt text?
+          Creating a back to top button that will go the bottom right. 
+          
+          The # in the href makes the a tag link to the page the user is in.
+          Adding the arrow up image so that people can understand it brings them up.
         -->
-        <div id="skills-gallery-container">
-          <figure>
-            <img
-              src="images/man-serving-volleyball.gif"
-              alt="A tall, tan man jump serving a mikasa volleyball."
-              loading="lazy" />
-            <figcaption>Serving</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="images/person-bumping-ball.gif"
-              alt="A dark skinned, puffy haired middle aged woman bumping a volleyball."
-              loading="lazy" />
-            <figcaption>Bumping</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="images/Volleyball Setting GIF by GoDuquesne.gif"
-              alt="A white middle aged female setting a volleyball."
-              loading="lazy" />
-            <figcaption>Setting</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="images/volleyball spike GIF by Black Hills State University.gif"
-              alt="A female slamming a volleyball down to the opposite court then celebrating with her team afterwards."
-              loading="lazy" />
-            <figcaption>Spiking</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="images/College Sports Sport GIF by NCAA Championships.gif"
-              alt="A female jumping and blocking a volleyball."
-              loading="lazy" />
-            <figcaption>Blocking</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="images/person-digging-for-volleyball.webp"
-              alt="An asian female diving for the volleyball outside of court and sommersaulting."
-              loading="lazy" />
-            <figcaption>Digging</figcaption>
-          </figure>
-        </div>
-      </section>
+        <a id="back-to-top" href="#"
+          ><img src="images/arrow-up.png" alt="Arrow up button image."
+        /></a>
 
-      <!-- 
-        This section holds the 3 main rules for playing volleyball.
-        
-        The section has an id to style some css properties like the background.
-          I did this because I felt like the rule cards needed more space so
-          that it could be more easy to read.
+        <!-- 
+          This is the beginning quote for the volleyball webpage.
+          
+          I use a span to refrence the person that gave the quote because
+          it is easier and better than using a blockquote and cite tag.
+        -->
+        <p id="beginning-quote">
+          "You're either getting better or getting worse. I don't think you stay
+          the same in sports. If we want to achieve something special in the
+          game, then those players have to recognize that they're responsible
+          every day for getting better."
+          <br />
+          <span style="font-weight: bold; font-style: italic">-Russ Rose</span>
+        </p>
 
-        The next div has an id because it will hold the cards under it.
-
-        Lastly, the core rules cards each have a
-        class so that it can be easy to style the content in it.
-      -->
-      <section id="core-rules-container">
-        <h3>The Core Rules</h3>
-        <div id="core-rules">
-          <div class="core-rule-card">
-            <h4>The Three-Hit Limit</h4>
-            <img
-              src="images/volleyball-player-serving-ball-black-white-vector-outline_231873-6393.jpg"
-              width="150px"
-              height="150px"
-              loading="lazy" />
+        <!-- 
+          This section explains what volleyball is and 
+          the simple rules that someone that wants 
+          to watch will want to know.
+        -->
+        <section>
+          <div id="what-is-volleyball-container">
+            <h3>What is Volleyball?</h3>
             <p>
-              When the ball comes to your side, you can only hit the ball 3
-              times to get it over the net. You <b>cannot</b> hit the ball 2
-              times in a row.
+              Volleyball is a team sport where two teams divided by a net
+              compete to try to score points by hitting a ball over the net to
+              make it land on the other team's side of the court. Each team
+              typically has 6 players on the court at once. There are different
+              versions available for specific circumstances in order to offer
+              the versatility of the game to everyone.
             </p>
-          </div>
-          <div class="core-rule-card">
-            <h4>Boundaries</h4>
+            <p>
+              A team can touch a volleyball a maximum of three times before it
+              must go over the net. The usual sequence is the dig where a person
+              bumps the ball to pass it, a set, the setter passes to someone
+              able to spike and then the spike where a person slams the ball
+              over the net onto the opponents side of the court.
+            </p>
+
+            <!-- 
+              loading lazy makes the image load when the
+              user scrolls onto the image
+            -->
             <img
-              src="images/volleyball-court.png"
-              width="200px"
-              height="100px"
-              alt="Birds eye view of a volleyball court."
+              width="500"
+              height="350"
+              src="images/woman-bumping-ball.jpg"
+              alt=""
               loading="lazy" />
-            <ul id="boundaries-list-rule">
-              <li>The server must serve from behind the end line.</li>
-              <li>You can't touch the volleyball net.</li>
-              <li>
-                The ball must land within the opponent's court boundaries.
-              </li>
-            </ul>
           </div>
+        </section>
 
-          <div class="core-rule-card">
-            <h4>Scoring</h4>
-            <ul>
-              <li>
-                A point is scored when the ball lands on the opponent's court or
-                it goes out of bounds.
-              </li>
-              <li>
-                Matches are typically played to 25 points, and a team must win
-                by 2 points.
-              </li>
-              <li>
-                In volleyball, the team winning a rally scores a point. When the
-                receiving team wins a rally, it gains a point and the right to
-                serve, and its players rotate one position clockwise.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- 
-        This section talks about the 4 main positions in volleyball.
-        I used inline styling for the h3 because 
-        I only needed to change one property.
-
-        Each card has an image so that the user can see what they mainly do.
-      -->
-      <section>
-        <h3 style="padding: 16px">Key Positions</h3>
-
-        <div id="volleyball-positions-container">
-          <div class="volleyball-position-card">
-            <h4>Setter</h4>
-            <div class="position-content">
+        <!-- 
+          This container holds an explanation for the main skills used in volleyball.
+  
+          I found it easier and more organzied to just
+          give the divs that explained skills to have a class.
+  
+          Each one has a h4 for typography hierachy.
+        -->
+        <section id="skills-container">
+          <h3>Skills and Techniques</h3>
+          <div>
+            <div class="fundamental-skill">
+              <h4>Serving</h4>
               <p>
-                The "control tower" who touches the ball more than anyone else
-                and sets up attacks. They usually get the second touch.
+                Serving is the act of putting the ball into play. There are
+                various types of serves, including underhand, overhand, and jump
+                serves.<br />
+                To serve the ball, you go behind the out of bounds line and hit
+                the ball with your hand to send it over the net.
               </p>
+            </div>
+            <div class="fundamental-skill">
+              <h4>Bumping</h4>
+              <p>
+                Bumping (also known as forearm pass) is used to pass the ball to
+                a teammate. Its typically the first touch. It involves using the
+                forearms to create a platform for the ball to bounce off of.
+                There are many ways to bump a ball but its important that you
+                use both arms most of the time to maintain accuracy and
+                strength.
+              </p>
+            </div>
+            <div class="fundamental-skill">
+              <h4>Setting</h4>
+              <p>
+                Setting is the act of preparing the ball for an attack. The
+                setter touches the ball after the bump and before the spike,
+                aiming to deliver a precise ball to the spiker. <br />
+                To set a ball, position yourself under the volleyball, create a
+                triangle with your hands and use your legs to push upwards.
+              </p>
+            </div>
+            <div class="fundamental-skill">
+              <h4>Blocking</h4>
+              <p>
+                Blocking is a defensive skill that people in the front row use
+                to prevent the ball from going over the net.<br />
+                To block effectively, you must time your jump to meet the ball
+                at its highest point and use your hands to create a solid
+                barrier.
+              </p>
+            </div>
+            <div class="fundamental-skill">
+              <h4>Spiking</h4>
+              <p>
+                Spiking is the act of attacking the ball with force, aiming to
+                score points by slamming the ball down into the opponent's
+                court. A successful spike requires timing, power, and
+                precision.<br />
+                To spike a ball, approach the net with speed, jump off both
+                feet, and swing your arm to hit the ball at its highest point.
+              </p>
+            </div>
+          </div>
+          <!-- 
+            This is going to hold a grid that shows GIFs of the different
+            skills and techniques.
+  
+            Each GIF is wrapped in a figure because I want the
+            name of the skill to be easily under the image using a figcaption.
+  
+            Do images with a caption need an alt text?
+          -->
+          <div id="skills-gallery-container">
+            <figure>
               <img
-                style="object-position: center 0px"
-                src="images/volleyball-setter-silhouette-000000-xl.png"
-                alt="A volleyball player setting the ball."
+                src="images/man-serving-volleyball.gif"
+                alt="A tall, tan man jump serving a mikasa volleyball."
                 loading="lazy" />
-            </div>
-          </div>
-          <div class="volleyball-position-card">
-            <h4>Libero</h4>
-            <div class="position-content">
-              <p>
-                The great receiver specialist who typically gets the ball first
-                and plays a key role in saving. Their reflexes are typically
-                amazing and they save alot of balls.
-              </p>
-              <img src="images/libero-haikyuu.webp" alt="" loading="lazy" />
-            </div>
-          </div>
-          <div class="volleyball-position-card">
-            <h4>Spiker</h4>
-            <div class="position-content">
-              <p>
-                The primary attacker who aims to score points by slamming the
-                ball over the net. They typically attack last from the front
-                row.
-              </p>
-              <img src="images/Spiker.webp" alt="" loading="lazy" />
-            </div>
-          </div>
-          <div class="volleyball-position-card">
-            <h4>Middle Blocker</h4>
-            <div class="position-content">
-              <p>
-                The player who specializes in blocking the opponent's attacks at
-                the net. This person is usually tall and has good timing to jump
-                and intercept the ball.
-              </p>
+              <figcaption>Serving</figcaption>
+            </figure>
+            <figure>
               <img
-                src="images/volleyball-middle-blocker.jpg"
-                alt=""
+                src="images/person-bumping-ball.gif"
+                alt="A dark skinned, puffy haired middle aged woman bumping a volleyball."
                 loading="lazy" />
+              <figcaption>Bumping</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="images/Volleyball Setting GIF by GoDuquesne.gif"
+                alt="A white middle aged female setting a volleyball."
+                loading="lazy" />
+              <figcaption>Setting</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="images/volleyball spike GIF by Black Hills State University.gif"
+                alt="A female slamming a volleyball down to the opposite court then celebrating with her team afterwards."
+                loading="lazy" />
+              <figcaption>Spiking</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="images/College Sports Sport GIF by NCAA Championships.gif"
+                alt="A female jumping and blocking a volleyball."
+                loading="lazy" />
+              <figcaption>Blocking</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="images/person-digging-for-volleyball.webp"
+                alt="An asian female diving for the volleyball outside of court and sommersaulting."
+                loading="lazy" />
+              <figcaption>Digging</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- 
+          This section holds the 3 main rules for playing volleyball.
+          
+          The section has an id to style some css properties like the background.
+            I did this because I felt like the rule cards needed more space so
+            that it could be more easy to read.
+  
+          The next div has an id because it will hold the cards under it.
+  
+          Lastly, the core rules cards each have a
+          class so that it can be easy to style the content in it.
+        -->
+        <section id="core-rules-container">
+          <h3>The Core Rules</h3>
+          <div id="core-rules">
+            <div class="core-rule-card">
+              <h4>The Three-Hit Limit</h4>
+              <img
+                src="images/volleyball-player-serving-ball-black-white-vector-outline_231873-6393.jpg"
+                width="150px"
+                height="150px"
+                loading="lazy" />
+              <p>
+                When the ball comes to your side, you can only hit the ball 3
+                times to get it over the net. You <b>cannot</b> hit the ball 2
+                times in a row.
+              </p>
+            </div>
+            <div class="core-rule-card">
+              <h4>Boundaries</h4>
+              <img
+                src="images/volleyball-court.png"
+                width="200px"
+                height="100px"
+                alt="Birds eye view of a volleyball court."
+                loading="lazy" />
+              <ul id="boundaries-list-rule">
+                <li>The server must serve from behind the end line.</li>
+                <li>You can't touch the volleyball net.</li>
+                <li>
+                  The ball must land within the opponent's court boundaries.
+                </li>
+              </ul>
+            </div>
+
+            <div class="core-rule-card">
+              <h4>Scoring</h4>
+              <ul>
+                <li>
+                  A point is scored when the ball lands on the opponent's court
+                  or it goes out of bounds.
+                </li>
+                <li>
+                  Matches are typically played to 25 points, and a team must win
+                  by 2 points.
+                </li>
+                <li>
+                  In volleyball, the team winning a rally scores a point. When
+                  the receiving team wins a rally, it gains a point and the
+                  right to serve, and its players rotate one position clockwise.
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+
+        <!-- 
+          This section talks about the 4 main positions in volleyball.
+          I used inline styling for the h3 because 
+          I only needed to change one property.
+  
+          Each card has an image so that the user can see what they mainly do.
+        -->
+        <section>
+          <h3 style="padding: 16px">Key Positions</h3>
+
+          <div id="volleyball-positions-container">
+            <div class="volleyball-position-card">
+              <h4>Setter</h4>
+              <div class="position-content">
+                <p>
+                  The "control tower" who touches the ball more than anyone else
+                  and sets up attacks. They usually get the second touch.
+                </p>
+                <img
+                  style="object-position: center 0px"
+                  src="images/volleyball-setter-silhouette-000000-xl.png"
+                  alt="A volleyball player setting the ball."
+                  loading="lazy" />
+              </div>
+            </div>
+            <div class="volleyball-position-card">
+              <h4>Libero</h4>
+              <div class="position-content">
+                <p>
+                  The great receiver specialist who typically gets the ball
+                  first and plays a key role in saving. Their reflexes are
+                  typically amazing and they save alot of balls.
+                </p>
+                <img src="images/libero-haikyuu.webp" alt="" loading="lazy" />
+              </div>
+            </div>
+            <div class="volleyball-position-card">
+              <h4>Spiker</h4>
+              <div class="position-content">
+                <p>
+                  The primary attacker who aims to score points by slamming the
+                  ball over the net. They typically attack last from the front
+                  row.
+                </p>
+                <img src="images/Spiker.webp" alt="" loading="lazy" />
+              </div>
+            </div>
+            <div class="volleyball-position-card">
+              <h4>Middle Blocker</h4>
+              <div class="position-content">
+                <p>
+                  The player who specializes in blocking the opponent's attacks
+                  at the net. This person is usually tall and has good timing to
+                  jump and intercept the ball.
+                </p>
+                <img
+                  src="images/volleyball-middle-blocker.jpg"
+                  alt=""
+                  loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
 
     <!-- 
       This footer holds the links to Volleyball Canada's socials, 
