@@ -45,17 +45,13 @@ body {
   overflow-x: hidden;
   font-size: 1.6rem;
 }
-#main-wrapper {
-  width: 95%;
-  margin: 0 auto;
-}
 
-main {
-  /* 
-    I am using a liquid layout
-  */
-  width: 70%;
-  max-width: 960px;
+/* 
+  This wrapper is for my liquid layout. 
+*/
+#main-wrapper {
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -77,9 +73,9 @@ header {
   padding-bottom: 150px;
   width: 100%;
   max-width: 1920px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   top: 0;
   z-index: 100;
 }
@@ -190,14 +186,16 @@ h1 {
 }
 
 h2 {
+  display: inline;
   text-align: center;
+  width: 60%;
+  max-width: 700px;
+  margin: 0 auto;
   color: ghostwhite;
   font-size: 36px;
   margin-top: 50px;
   letter-spacing: 2px;
-  -webkit-text-decoration: underline 5px #ff7a00;
-  text-decoration: underline 5px #ff7a00;
-  text-underline-offset: 25px;
+  border-bottom: 5px solid #ff7a00;
 }
 
 h3 {
@@ -285,8 +283,9 @@ hr {
     This makes the button a square then we turn 
     it into a circle using border-radius.
   */
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
+  aspect-ratio: 1/1;
 
   border: none;
   /* 
@@ -378,11 +377,9 @@ footer ul {
   information from the socials. 
 */
 footer hr {
-  /* vw is viewport width. This makes the hr take up 
-  the entire width of the viewport. */
-  width: 100vw;
-  border-color: #737373;
-  margin: 16px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #737373;
   margin: 0 auto;
   padding: 8px;
 }
@@ -411,4 +408,5 @@ footer h4 {
 #footer-legal-copyright {
   position: absolute;
   top: 100%;
+  background-color: #272727;
 }
